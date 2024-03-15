@@ -1,0 +1,1639 @@
+Program.Sub.ScreenSU.Start
+Gui.F_UserFieldDash..Create
+Gui.F_UserFieldDash..Size(20415,12900)
+Gui.F_UserFieldDash..MinX(0)
+Gui.F_UserFieldDash..MinY(0)
+Gui.F_UserFieldDash..Position(0,0)
+Gui.F_UserFieldDash..BackColor(-2147483633)
+Gui.F_UserFieldDash..MousePointer(0)
+Gui.F_UserFieldDash..Event(UnLoad,Form_UnLoad)
+Gui.F_UserFieldDash..Caption("User Field Dashboard")
+Gui.F_UserFieldDash..ContextMenuCreate("ctxExport")
+Gui.F_UserFieldDash..ContextMenuAddItem("ctxExport", "EXPORT", 0, "Export to Excel")
+Gui.F_UserFieldDash..ContextMenuSetItemEventHandler("ctxExport", "EXPORT", "ctxExport")
+Gui.F_UserFieldDash.frame1.Create(Frame)
+Gui.F_UserFieldDash.frame1.Size(19905,4500)
+Gui.F_UserFieldDash.frame1.Position(90,1800)
+Gui.F_UserFieldDash.frame1.Caption("GSS Part")
+Gui.F_UserFieldDash.frame1.FontSize(10)
+Gui.F_UserFieldDash.frame1.FontStyle(True,False,False,False,False)
+Gui.F_UserFieldDash.frame1.Anchor(13)
+Gui.F_UserFieldDash.frame1.Enabled(False)
+Gui.F_UserFieldDash.frame1.Visible(False)
+Gui.F_UserFieldDash.GsGridControl1.Create(GsGridControl)
+Gui.F_UserFieldDash.GsGridControl1.Size(19740,3330)
+Gui.F_UserFieldDash.GsGridControl1.Position(90,1050)
+Gui.F_UserFieldDash.GsGridControl1.Parent("frame1")
+Gui.F_UserFieldDash.GsGridControl1.Anchor(13)
+Gui.F_UserFieldDash.lbl6.Create(Label,"PL",True,465,255,0,2505,345,True,0,"Arial",8,-2147483633,0)
+Gui.F_UserFieldDash.lbl6.Parent("frame1")
+Gui.F_UserFieldDash.txtGssPart.Create(TextBox,"",True,1785,300,0,120,570,True,0,"Arial",8,-2147483643,1)
+Gui.F_UserFieldDash.txtGssPart.Parent("frame1")
+Gui.F_UserFieldDash.txtGssPL.Create(TextBox,"",True,525,300,0,2490,570,True,0,"Arial",8,-2147483643,1)
+Gui.F_UserFieldDash.txtGssPL.Parent("frame1")
+Gui.F_UserFieldDash.lbl4.Create(Label,"Part Number",True,1470,255,0,120,345,True,0,"Arial",8,-2147483633,0)
+Gui.F_UserFieldDash.lbl4.Parent("frame1")
+Gui.F_UserFieldDash.cmdGssPLBrw.Create(Button)
+Gui.F_UserFieldDash.cmdGssPLBrw.Size(405,375)
+Gui.F_UserFieldDash.cmdGssPLBrw.Position(3105,540)
+Gui.F_UserFieldDash.cmdGssPLBrw.Parent("frame1")
+Gui.F_UserFieldDash.cmdGssPLBrw.Caption("^")
+Gui.F_UserFieldDash.cmdGssPLBrw.Event(Click,cmdGssPLBrw_Click)
+Gui.F_UserFieldDash.cmdGssPartBrw.Create(Button)
+Gui.F_UserFieldDash.cmdGssPartBrw.Size(405,375)
+Gui.F_UserFieldDash.cmdGssPartBrw.Position(1965,525)
+Gui.F_UserFieldDash.cmdGssPartBrw.Parent("frame1")
+Gui.F_UserFieldDash.cmdGssPartBrw.Caption("^")
+Gui.F_UserFieldDash.cmdGssPartBrw.Event(Click,cmdGssPartBrw_Click)
+Gui.F_UserFieldDash.cmdGssPartFilter.Create(Button)
+Gui.F_UserFieldDash.cmdGssPartFilter.Size(855,375)
+Gui.F_UserFieldDash.cmdGssPartFilter.Position(3885,525)
+Gui.F_UserFieldDash.cmdGssPartFilter.Parent("frame1")
+Gui.F_UserFieldDash.cmdGssPartFilter.Caption("Filter")
+Gui.F_UserFieldDash.cmdGssPartFilter.Event(Click,cmdGssPartFilter_Click)
+Gui.F_UserFieldDash.cmdGssPartSearch.Create(Button)
+Gui.F_UserFieldDash.cmdGssPartSearch.Size(1515,375)
+Gui.F_UserFieldDash.cmdGssPartSearch.Position(18270,615)
+Gui.F_UserFieldDash.cmdGssPartSearch.Parent("frame1")
+Gui.F_UserFieldDash.cmdGssPartSearch.Caption("Search")
+Gui.F_UserFieldDash.cmdGssPartSearch.Event(Click,cmdGssPartSearch_Click)
+Gui.F_UserFieldDash.cmdGssPartSearch.Anchor(13)
+Gui.F_UserFieldDash.frame2.Create(Frame)
+Gui.F_UserFieldDash.frame2.Size(19905,10440)
+Gui.F_UserFieldDash.frame2.Position(90,1830)
+Gui.F_UserFieldDash.frame2.Caption("XRef Part")
+Gui.F_UserFieldDash.frame2.FontSize(10)
+Gui.F_UserFieldDash.frame2.FontStyle(True,False,False,False,False)
+Gui.F_UserFieldDash.frame2.Anchor(15)
+Gui.F_UserFieldDash.GsGridControl2.Create(GsGridControl)
+Gui.F_UserFieldDash.GsGridControl2.Size(19740,9330)
+Gui.F_UserFieldDash.GsGridControl2.Position(60,990)
+Gui.F_UserFieldDash.GsGridControl2.Parent("frame2")
+Gui.F_UserFieldDash.GsGridControl2.Anchor(15)
+Gui.F_UserFieldDash.GsGridControl2.ContextMenuAttach("ctxExport")
+Gui.F_UserFieldDash.cmdXrefPartBrw.Create(Button)
+Gui.F_UserFieldDash.cmdXrefPartBrw.Size(405,375)
+Gui.F_UserFieldDash.cmdXrefPartBrw.Position(1965,525)
+Gui.F_UserFieldDash.cmdXrefPartBrw.Parent("frame2")
+Gui.F_UserFieldDash.cmdXrefPartBrw.Caption("^")
+Gui.F_UserFieldDash.cmdXrefPartBrw.Event(Click,cmdXrefPartBrw_Click)
+Gui.F_UserFieldDash.txtXrefPart.Create(TextBox,"",True,1785,300,0,105,570,True,0,"Arial",8,-2147483643,1)
+Gui.F_UserFieldDash.txtXrefPart.Parent("frame2")
+Gui.F_UserFieldDash.lbl1.Create(Label,"Part Number",True,1470,255,0,180,330,True,0,"Arial",8,-2147483633,0)
+Gui.F_UserFieldDash.lbl1.Parent("frame2")
+Gui.F_UserFieldDash.cmdXrefCustomerBrw.Create(Button)
+Gui.F_UserFieldDash.cmdXrefCustomerBrw.Size(405,375)
+Gui.F_UserFieldDash.cmdXrefCustomerBrw.Position(4680,525)
+Gui.F_UserFieldDash.cmdXrefCustomerBrw.Parent("frame2")
+Gui.F_UserFieldDash.cmdXrefCustomerBrw.Caption("^")
+Gui.F_UserFieldDash.cmdXrefCustomerBrw.Event(Click,cmdXrefCustomerBrw_Click)
+Gui.F_UserFieldDash.txtXrefCustomer.Create(TextBox,"",True,1065,300,0,3540,570,True,0,"Arial",8,-2147483643,1)
+Gui.F_UserFieldDash.txtXrefCustomer.Parent("frame2")
+Gui.F_UserFieldDash.lbl3.Create(Label,"Customer",True,870,255,0,3645,330,True,0,"Arial",8,-2147483633,0)
+Gui.F_UserFieldDash.lbl3.Parent("frame2")
+Gui.F_UserFieldDash.cmdXrefFilter.Create(Button)
+Gui.F_UserFieldDash.cmdXrefFilter.Size(855,375)
+Gui.F_UserFieldDash.cmdXrefFilter.Position(7635,525)
+Gui.F_UserFieldDash.cmdXrefFilter.Parent("frame2")
+Gui.F_UserFieldDash.cmdXrefFilter.Caption("Filter")
+Gui.F_UserFieldDash.cmdXrefFilter.Event(Click,cmdXrefFilter_Click)
+Gui.F_UserFieldDash.txtXrefCustomerPart.Create(TextBox,"",True,1605,300,0,5205,570,True,0,"Arial",8,-2147483643,1)
+Gui.F_UserFieldDash.txtXrefCustomerPart.Parent("frame2")
+Gui.F_UserFieldDash.lbl7.Create(Label,"Customer's Part",True,1380,255,0,5325,330,True,0,"Arial",8,-2147483633,0)
+Gui.F_UserFieldDash.lbl7.Parent("frame2")
+Gui.F_UserFieldDash.cmdXrefCustomerPartBrw.Create(Button)
+Gui.F_UserFieldDash.cmdXrefCustomerPartBrw.Size(405,375)
+Gui.F_UserFieldDash.cmdXrefCustomerPartBrw.Position(6900,525)
+Gui.F_UserFieldDash.cmdXrefCustomerPartBrw.Parent("frame2")
+Gui.F_UserFieldDash.cmdXrefCustomerPartBrw.Caption("^")
+Gui.F_UserFieldDash.cmdXrefCustomerPartBrw.Event(Click,cmdXrefCustomerPartBrw_Click)
+Gui.F_UserFieldDash.txtXrefPL.Create(TextBox,"",True,525,300,0,2460,570,True,0,"Arial",8,-2147483643,1)
+Gui.F_UserFieldDash.txtXrefPL.Parent("frame2")
+Gui.F_UserFieldDash.cmdXrefPLBrw.Create(Button)
+Gui.F_UserFieldDash.cmdXrefPLBrw.Size(405,375)
+Gui.F_UserFieldDash.cmdXrefPLBrw.Position(3045,525)
+Gui.F_UserFieldDash.cmdXrefPLBrw.Parent("frame2")
+Gui.F_UserFieldDash.cmdXrefPLBrw.Caption("^")
+Gui.F_UserFieldDash.cmdXrefPLBrw.Event(Click,cmdXrefPLBrw_Click)
+Gui.F_UserFieldDash.lbl2.Create(Label,"PL",True,345,255,0,2520,330,True,0,"Arial",8,-2147483633,0)
+Gui.F_UserFieldDash.lbl2.Parent("frame2")
+Gui.F_UserFieldDash.cmdXrefPartSearch.Create(Button)
+Gui.F_UserFieldDash.cmdXrefPartSearch.Size(1515,375)
+Gui.F_UserFieldDash.cmdXrefPartSearch.Position(18270,525)
+Gui.F_UserFieldDash.cmdXrefPartSearch.Parent("frame2")
+Gui.F_UserFieldDash.cmdXrefPartSearch.Caption("Search")
+Gui.F_UserFieldDash.cmdXrefPartSearch.Event(Click,cmdXrefPartSearch_Click)
+Gui.F_UserFieldDash.cmdXrefPartSearch.Anchor(13)
+Gui.F_UserFieldDash.pic1.Create(PictureBox)
+Gui.F_UserFieldDash.pic1.Size(5520,1680)
+Gui.F_UserFieldDash.pic1.Position(6975,90)
+Gui.F_UserFieldDash.pic1.Anchor(1)
+Gui.F_UserFieldDash.frame3.Create(Frame)
+Gui.F_UserFieldDash.frame3.Size(1785,555)
+Gui.F_UserFieldDash.frame3.Position(18285,105)
+Gui.F_UserFieldDash.frame3.Anchor(9)
+Gui.F_UserFieldDash.optView.Create(Option)
+Gui.F_UserFieldDash.optView.Size(825,255)
+Gui.F_UserFieldDash.optView.Position(90,210)
+Gui.F_UserFieldDash.optView.Parent("frame3")
+Gui.F_UserFieldDash.optView.Caption("View")
+Gui.F_UserFieldDash.optView.FontStyle(True,False,False,False,False)
+Gui.F_UserFieldDash.optView.Event(Click,optView_Click)
+Gui.F_UserFieldDash.optEdit.Create(Option)
+Gui.F_UserFieldDash.optEdit.Size(720,255)
+Gui.F_UserFieldDash.optEdit.Position(960,210)
+Gui.F_UserFieldDash.optEdit.Parent("frame3")
+Gui.F_UserFieldDash.optEdit.Caption("Edit")
+Gui.F_UserFieldDash.optEdit.FontStyle(True,False,False,False,False)
+Gui.F_UserFieldDash.optEdit.Event(Click,optEdit_Click)
+Gui.F_UserFieldDash.optEdit.Enabled(False)
+Gui.F_UserFieldDash.cmdLoadAll.Create(Button)
+Gui.F_UserFieldDash.cmdLoadAll.Enabled(False)
+Gui.F_UserFieldDash.cmdLoadAll.Visible(False)
+Gui.F_UserFieldDash.cmdLoadAll.Size(1785,375)
+Gui.F_UserFieldDash.cmdLoadAll.Position(18285,720)
+Gui.F_UserFieldDash.cmdLoadAll.Caption("Load All")
+Gui.F_UserFieldDash.cmdLoadAll.Event(Click,cmdLoadAll_Click)
+Gui.F_UserFieldDash.cmdLoadAll.Anchor(9)
+Gui.F_UserFieldDash.cmdSave.Create(Button)
+Gui.F_UserFieldDash.cmdSave.Size(1680,375)
+Gui.F_UserFieldDash.cmdSave.Position(18315,1470)
+Gui.F_UserFieldDash.cmdSave.Caption("Save Changes")
+Gui.F_UserFieldDash.cmdSave.Event(Click,cmdSave_Click)
+Gui.F_UserFieldDash.cmdSave.Anchor(9)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.sGssFilter.Declare
+v.Global.sXrefFilter.Declare
+v.Global.sPart.Declare
+
+v.Global.sPartFilter.Declare
+v.Global.sPL_Filter.Declare
+v.Global.sCustomerPartFilter.Declare
+v.Global.sCustomerPart.Declare
+v.Global.bShow.Declare
+
+v.Global.bGSSSearch.Declare
+v.Global.bXrefSearch.Declare
+
+v.Global.bSave.Declare
+v.Global.bSaveSingle.Declare
+v.Global.bRelaunch.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+v.Local.iHook.Declare
+v.Local.sParams.Declare
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.CallSub(checkCustomFolder)
+	
+	v.Local.iHook.Set(v.Caller.Hook)	
+	
+	'check if called from a passed variable.
+	f.Intrinsic.Control.If(v.Caller.Switches, <>, "")
+		f.Intrinsic.String.Split(v.Caller.Switches, "!*!", v.Local.sParams)
+		
+		f.Intrinsic.Control.If(v.Local.sParams.UBound, =, 1)
+		
+			f.Intrinsic.Control.If(v.Local.sParams(0), =, "True")
+				gui.F_UserFieldDash.optEdit.Value(1)
+			f.Intrinsic.Control.Else
+'				gui.F_UserFieldDash.optView.Value(1)
+				gui.F_UserFieldDash.optEdit.Value(1)
+			f.Intrinsic.Control.EndIf
+		
+			f.Intrinsic.Control.If(v.Local.sParams(1), <>, "")
+				v.Local.iHook.Set(v.Local.sParams(1))
+			f.Intrinsic.Control.EndIf		
+			
+			gui.F_UserFieldDash..AlwaysOnTop(true)
+		F.Intrinsic.Control.Else
+			gui.F_UserFieldDash.optView.Value(1)
+		f.Intrinsic.Control.EndIf
+		
+	f.Intrinsic.Control.Else
+'		gui.F_UserFieldDash.optView.Value(1)
+		gui.F_UserFieldDash.optEdit.Value(1)
+	f.Intrinsic.Control.EndIf
+	
+	
+	
+	f.Intrinsic.Control.SelectCase(v.Local.iHook)
+		f.Intrinsic.Control.Case(10120)
+			v.Passed.000069.Set("Extra UFs")
+		f.Intrinsic.Control.Case(10220)
+		
+			f.Intrinsic.String.Build("{0}{1}", v.Passed.000007, v.Passed.000008, v.Global.sPart)
+			f.Intrinsic.Control.If(v.Global.sPart, !=, "")
+			
+				v.Global.bSaveSingle.Set(true)
+				f.Intrinsic.Control.CallSub(getGroupSecurity)
+				f.Intrinsic.Control.CallSub(loadPictureLogo)
+				f.Intrinsic.Control.CallSub(loadSingleInv)
+				'f.Intrinsic.Control.CallSub(Deserialize)
+				f.Intrinsic.Control.CallSub(loadCaptions)
+				''f.Intrinsic.Control.CallSub(Deserialize)
+				gui.F_UserFieldDash..Show
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.CaseElse
+			'gui.F_UserFieldDash.optEdit.Value(true)
+			f.Intrinsic.Control.CallSub(getGroupSecurity)
+			f.Intrinsic.Control.CallSub(loadPictureLogo)
+			f.Intrinsic.Control.CallSub(loadAllInv)
+			'f.Intrinsic.Control.CallSub(Deserialize)
+			f.Intrinsic.Control.CallSub(loadCaptions)
+			F.Intrinsic.Control.CallSub(LoadDDLs)
+			''f.Intrinsic.Control.CallSub(Deserialize)
+			gui.F_UserFieldDash..Show
+		f.Intrinsic.Control.EndSelect	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.Form_UnLoad.Start
+v.Local.sParam.Declare
+v.Local.sPath.Declare
+v.Local.iPiD.Declare
+v.Local.iRet.Declare
+f.Intrinsic.Control.Try	
+	
+	f.Intrinsic.String.Build("{0}!*!{1}", v.Screen.F_UserFieldDash!optEdit.Value, v.Caller.Hook, v.Local.sParam)
+	f.Intrinsic.String.Build("{0}\GCG_5506_UserField_Dash.g2u", v.Caller.GasDir, v.Local.sPath)
+	gui.F_UserFieldDash..Visible(false)
+		
+	f.Intrinsic.Control.If(v.Global.bSave)
+		f.Intrinsic.Control.CallSub(cmdSave_Click)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("Do you wish to save changes before exiting the programs.", "Save Changes", 3, v.Local.iRet)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Local.iRet, =, 2)
+		gui.F_UserFieldDash..Visible(True)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Local.iRet, =, 6)
+		f.Intrinsic.Control.CallSub(cmdSave_Click)
+	f.Intrinsic.Control.EndIf
+	
+	
+	f.Intrinsic.Control.If(v.Global.bRelaunch)
+		v.Global.bRelaunch.Set(false)
+		f.Global.General.CallAsyncGAS(v.Local.sPath, v.Local.sParam, v.Local.iPiD)
+	f.Intrinsic.Control.EndIf
+	''f.Intrinsic.Control.CallSub(Serialize)
+	f.Intrinsic.Control.End
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.ErrorMsg.Start
+v.Local.sError.Declare
+
+'Closes ODBC connection, default to connection : "con"
+'f.Intrinsic.Control.If(v.ODBC.con.State, =, 1)
+'	f.ODBC.Connection!con.Close
+'f.Intrinsic.Control.EndIf
+
+'Generic Error message.
+f.Intrinsic.String.Build("Project GCG_5506_UserField_Dash.g2u {0}{0}Subroutine: {1}{0}Error: {2} with Description: {3}", v.Ambient.NewLine, v.Args.CurrentSub, v.Ambient.ErrorNumber, v.Ambient.ErrorDescription, v.Local.sError)
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+Program.Sub.ErrorMsg.End
+
+Program.Sub.checkCustomFolder.Start
+v.Local.sFolder.Declare
+v.Local.bExists.Declare
+f.Intrinsic.Control.Try
+	f.Intrinsic.String.Build("{0}\CUSTOM\GCG_5506\", v.Caller.GlobalDir, v.Local.sFolder)
+	f.Intrinsic.File.DirExists(v.Local.sFolder, v.Local.bExists)
+	f.Intrinsic.Control.If(v.Local.bExists.Not)
+		f.Intrinsic.File.CreateDir(v.Local.sFolder)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.checkCustomFolder.End
+
+Program.Sub.loadPictureLogo.Start
+v.Local.bEdit.Declare
+f.Intrinsic.Control.Try
+	'Load the Logo at the top of dash and the Icon
+	v.Local.sIcon.Declare(String)
+	v.Local.sGssLogo.Declare(String)
+	
+	f.Intrinsic.String.Build("{0}\ART\gss2.ico", v.Caller.GlobalDir, v.Local.sIcon)
+	f.Intrinsic.String.Build("{0}\ART\GAB_GSS_Logo_Green_Dash.png", v.Caller.GlobalDir, v.Local.sGssLogo)
+	gui.F_UserFieldDash.pic1.Picture(v.Local.sGssLogo)
+	gui.F_UserFieldDash..Icon(v.Local.sIcon)
+	
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadPictureLogo.End
+
+Program.Sub.loadAllInv.Start
+v.Local.iQty.Declare
+v.Local.iCnt.Declare
+v.Local.sTemp.Declare
+
+f.Intrinsic.Control.Try
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Data.DataTable.CreateFromSQL("inventoryMstr", "con", "Select Part, Location, Description, Product_Line, Qty_OnHand, Part+Location as DictionaryCol from V_Inventory_Mstr")
+		f.Data.DataTable.CreateFromSQL("inventoryMst2", "con", "Select Part+Location as DictionaryCol, Description_2, Description_3 from V_Inventory_Mst2")
+		f.Data.DataTable.CreateFromSQL("inventoryCrossRef", "con", "Select Part, Location, Description, Customer, Customer_Part, Vendor,  MFG_Part, MFG_Name, Part+Location as DictionaryCol from V_INV_CROSS_REF")
+		f.Data.DataTable.CreateFromSQL("ufCaptions", "con", "Select User_Field, UF_Type, UF_Captions, UF_ID from GCG_5506_UF_Captions Order by UF_ID asc", true)
+		f.Data.DataTable.CreateFromSQL("gssPartUF", "con", "Select * from GCG_5506_GssPartUF", true)
+		f.Data.DataTable.CreateFromSQL("xrefPartUF", "con", "Select * from GCG_5506_XrefPartUF", true)
+		
+		
+		f.Data.Dictionary.CreateFromSQL("customerDictionary", "con", "Select Customer, Name_Customer from Customer_Master")
+		f.Data.Dictionary.CreateFromDataTable("qtyOnhandDictionary", "inventoryMstr", "DictionaryCol", "Qty_OnHand", 4)
+		f.Data.Dictionary.CreateFromDataTable("productLineDictionary", "inventoryMstr", "DictionaryCol", "Product_Line", 4)
+		f.Data.Dictionary.CreateFromDataTable("desc1Dictionary", "inventoryMstr", "DictionaryCol", "Description", 4)
+		f.Data.Dictionary.CreateFromDataTable("desc2Dictionary", "inventoryMst2", "DictionaryCol", "Description_2", 4)
+		f.Data.Dictionary.CreateFromDataTable("desc3Dictionary", "inventoryMst2", "DictionaryCol", "Description_3", 4)
+	f.ODBC.Connection!con.Close
+	
+	f.Data.Linq.Join("leftJoin", "datatable", "inventoryMstr*!*i", "datatable", "gssPartUF*!*g", "i.Part = g.Part and i.Location = g.Location", "i.Part*!*i.Location*!*i.Description*!*i.Product_line*!*g.Description_2*!*g.Description_3*!*g.Qty_OnHand*!*g.UserField_1*!*g.UserField_2*!*g.UserField_3*!*g.UserField_4*!*g.UserField_5*!*g.UserField_6*!*g.UserField_7*!*g.UserField_8*!*g.UserField_9*!*g.UserField_10*!*g.UserField_11*!*g.UserField_12*!*g.UserField_13*!*g.UserField_14*!*g.UserField_15*!*g.UserField_16*!*g.UserField_17*!*g.UserField_18*!*g.UserField_19*!*g.UserField_20*!*g.UserField_21*!*g.UserField_22*!*g.UserField_23*!*g.UserField_24*!*g.UserField_25*!*g.UserField_26*!*g.UserField_27*!*g.UserField_28*!*g.UserField_29*!*g.UserField_30*!*g.UserField_31*!*g.UserField_32*!*g.UserField_33*!*g.UserField_34*!*g.UserField_35*!*g.UserField_36*!*g.UserField_37*!*g.UserField_38*!*g.UserField_39*!*g.UserField_40*!*g.UserField_41*!*g.UserField_42*!*g.UserField_43*!*g.UserField_44*!*g.UserField_45*!*g.UserField_46*!*g.UserField_47*!*g.UserField_48*!*g.UserField_49*!*g.UserField_50*!*g.UserField_51*!*g.UserField_52*!*g.UserField_53*!*g.UserField_54*!*g.UserField_55*!*g.UserField_56*!*g.UserField_57*!*g.UserField_58*!*g.UserField_59*!*g.UserField_60*!*i.DictionaryCol", "", "", "", "gssPartUfDT", true)
+	
+	f.Data.Linq.Join("leftJoin", "datatable", "inventoryCrossRef*!*i", "datatable", "xrefPartUF*!*g", "i.Part = g.Part and i.Location = g.Location and i.Customer = g.Customer", "i.Part*!*i.Location*!*i.Description*!*i.Customer*!*i.Customer_Part*!*g.Product_Line*!*g.Vendor*!*g.MFG_Part*!*g.MFG_Name*!*g.Qty_OnHand*!*g.UserField_1*!*g.UserField_2*!*g.UserField_3*!*g.UserField_4*!*g.UserField_5*!*g.UserField_6*!*g.UserField_7*!*g.UserField_8*!*g.UserField_9*!*g.UserField_10*!*g.UserField_11*!*g.UserField_12*!*g.UserField_13*!*g.UserField_14*!*g.UserField_15*!*g.UserField_16*!*g.UserField_17*!*g.UserField_18*!*g.UserField_19*!*g.UserField_20*!*g.UserField_21*!*g.UserField_22*!*g.UserField_23*!*g.UserField_24*!*g.UserField_25*!*g.UserField_26*!*g.UserField_27*!*g.UserField_28*!*g.UserField_29*!*g.UserField_30*!*g.UserField_31*!*g.UserField_32*!*g.UserField_33*!*g.UserField_34*!*g.UserField_35*!*g.UserField_36*!*g.UserField_37*!*g.UserField_38*!*g.UserField_39*!*g.UserField_40*!*g.UserField_41*!*g.UserField_42*!*g.UserField_43*!*g.UserField_44*!*g.UserField_45*!*g.UserField_46*!*g.UserField_47*!*g.UserField_48*!*g.UserField_49*!*g.UserField_50*!*g.UserField_51*!*g.UserField_52*!*g.UserField_53*!*g.UserField_54*!*g.UserField_55*!*g.UserField_56*!*g.UserField_57*!*g.UserField_58*!*g.UserField_59*!*g.UserField_60*!*i.DictionaryCol", "", "", "", "xrefPartUFDT", true)
+	
+	f.Data.Dictionary.SetDefaultReturn("qtyOnhandDictionary", "0.00")
+	f.Data.DataTable.FillFromDictionary("xrefPartUFDT", "qtyOnhandDictionary", "DictionaryCol", "Qty_OnHand")
+'	f.Data.Dictionary.Close("qtyOnhandDictionary")
+	
+	f.Data.Dictionary.SetDefaultReturn("qtyOnhandDictionary", "0.00")
+	f.Data.DataTable.FillFromDictionary("gssPartUfDT", "qtyOnhandDictionary", "DictionaryCol", "Qty_OnHand")
+	f.Data.Dictionary.Close("qtyOnhandDictionary")
+	
+	f.Data.Dictionary.SetDefaultReturn("productLineDictionary", "")
+	f.Data.DataTable.FillFromDictionary("xrefPartUFDT", "productLineDictionary", "DictionaryCol", "Product_Line")
+	f.Data.Dictionary.Close("productLineDictionary")
+	
+	f.Data.Dictionary.SetDefaultReturn("desc1Dictionary", "")
+	f.Data.DataTable.FillFromDictionary("xrefPartUFDT", "desc1Dictionary", "DictionaryCol", "Description")
+	f.Data.Dictionary.Close("desc1Dictionary")
+
+	f.Data.Dictionary.SetDefaultReturn("desc2Dictionary", "")
+	f.Data.DataTable.FillFromDictionary("gssPartUfDT", "desc2Dictionary", "DictionaryCol", "Description_2")
+	f.Data.Dictionary.Close("desc2Dictionary")
+	
+	f.Data.Dictionary.SetDefaultReturn("desc3Dictionary", "")
+	f.Data.DataTable.FillFromDictionary("gssPartUfDT", "desc3Dictionary", "DictionaryCol", "Description_3")
+	f.Data.Dictionary.Close("desc3Dictionary")
+	
+	f.Data.DataTable.AddColumn("xrefPartUFDT", "Name_Customer", "String")
+	f.Data.DataTable.SetValueFormat("xrefPartUFDT", -1, "Customer", "Name_Customer", ">" )
+	f.Data.Dictionary.SetDefaultReturn("customerDictionary", "")
+	f.Data.DataTable.FillFromDictionary("xrefPartUFDT", "customerDictionary", "Name_Customer", "Name_Customer")
+	f.Data.Dictionary.Close("customerDictionary")
+	
+	f.Data.DataTable.Close("inventoryMstr")
+	f.Data.DataTable.Close("inventoryMst2")
+	f.Data.DataTable.Close("inventoryCrossRef")
+	f.Data.DataTable.Close("gssPartUF")
+	f.Data.DataTable.Close("xrefPartUF")
+	
+	'Addition by FEQ for MAXON. They want to add more customer information, including address column (City + ", " State), contact column (The primary contact for that customer), Contact phone and contact email,
+	F.ODBC.Connection!conx.OpenCompanyConnection
+	
+	F.Data.Dictionary.CreateFromSQL("dicAddy", "conx", "select CUSTOMER, RTRIM(LTRIM(CITY)) + ', ' + RTRIM(LTRIM(STATE)) as address from V_CUSTOMER_MASTER")
+	F.Data.Dictionary.SetDefaultReturn("dicAddy", "")
+	
+	F.Data.DataTable.AddColumn("xrefPartUFDT", "Address", "String")
+	
+	F.Data.DataTable.FillFromDictionary("xrefPartUFDT", "dicAddy", "Customer", "Address")
+	
+	F.Data.Dictionary.Close("dicAddy")	
+	
+	F.Data.DataTable.CreateFromSQL("dtAddlCustInfo", "conx", "Select RTRIM(LTRIM(Cust)) as Cust, RTRIM(LTRIM(Name)) as Name, RTRIM(LTRIM(Phone1)) as Phone1, RTRIM(LTRIM(email1)) as Email1 from CONTACT where PRI_CNTCT = '1'", True)
+	
+	'We are going to create dictionaries and fill in this info into the table
+	F.Data.DataTable.AddColumn("xrefPartUFDT", "Contact", "String")
+	
+	F.Data.Dictionary.CreateFromDataTable("dicContact", "dtAddlCustInfo", "Cust", "Name")
+	F.Data.Dictionary.SetDefaultReturn("dicContact", "")
+	
+	F.Data.DataTable.FillFromDictionary("xrefPartUFDT", "dicContact", "Customer", "Contact")
+	
+	F.Data.Dictionary.Close("dicContact")
+	
+	'PHone Number
+	F.Data.DataTable.AddColumn("xrefPartUFDT", "PhoneNo", "String")
+	
+	F.Data.Dictionary.CreateFromDataTable("dicPhone", "dtAddlCustInfo", "Cust", "Phone1")
+	F.Data.Dictionary.SetDefaultReturn("dicPhone", "")
+	
+	F.Data.DataTable.FillFromDictionary("xrefPartUFDT", "dicPhone", "Customer", "PhoneNo")
+	
+	F.Data.Dictionary.Close("dicPhone")
+	
+	'email
+	F.Data.DataTable.AddColumn("xrefPartUFDT", "Email", "String")
+	
+	F.Data.Dictionary.CreateFromDataTable("dicEmail", "dtAddlCustInfo", "Cust", "email1")
+	F.Data.Dictionary.SetDefaultReturn("dicEmail", "")
+	
+	F.Data.DataTable.FillFromDictionary("xrefPartUFDT", "dicEmail", "Customer", "Email")
+	
+	F.Data.Dictionary.Close("dicEmail")
+	
+	F.ODBC.Connection!conx.Close
+	
+	F.Data.Dictionary.CreateFromDataTable("dicMachine", "xrefPartUFDT", "Part", "Part")
+	F.Data.Dictionary.SetDefaultReturn("dicMachine", "")
+	
+	F.Data.DataTable.FillFromDictionary("xrefPartUFDT", "dicMachine", "Part", "USERFIELD_1")
+	
+	F.Data.Dictionary.Close("dicMachine")
+	
+	f.Data.DataTable.RemoveColumn("gssPartUfDT", "DictionaryCol")
+	f.Data.DataTable.RemoveColumn("xrefPartUFDT", "DictionaryCol")
+	
+	f.Data.DataTable.AddExpressionColumn("ufCaptions", "User_Field_Caption", "String", "ISNULL(UF_Captions, User_Field)")
+	f.Data.DataView.Create("ufCaptions", "gssPartUFCaption", 22, "UF_Type = 'GSSPART'", "UF_ID ASC")
+	f.Data.DataView.Create("ufCaptions", "xrfPartUFCaption", 22, "UF_Type = 'XRFPART'", "UF_ID ASC")
+	v.Local.iQty.Set(v.DataTable.ufCaptions(0).UF_Captions!FieldValTrim)
+
+	f.Data.DataView.Create("gssPartUfDT", "gssPartUfDV", 22)
+	f.Data.DataView.Create("xrefPartUFDT", "xrefPartUFDV", 22)	
+
+	v.Global.bShow.Set(v.DataTable.ufCaptions(0).UF_Captions!FieldVal)
+	
+	gui.F_UserFieldDash.GsGridControl1.AddGridviewFromDataview("GssPartGV", "gssPartUfDT", "gssPartUfDV")
+	gui.F_UserFieldDash.GsGridControl1.MainView("GssPartGV")
+	gui.F_UserFieldDash.GsGridControl1.SetGridviewProperty("GssPartGV", "OptionsViewColumnAutoWidth", false)
+	
+	gui.F_UserFieldDash.GsGridControl2.AddGridviewFromDataview("XrefPartGV", "xrefPartUFDT", "xrefPartUFDV")
+	gui.F_UserFieldDash.GsGridControl2.MainView("XrefPartGV")
+	gui.F_UserFieldDash.GsGridControl2.SetGridviewProperty("XrefPartGV", "OptionsViewColumnAutoWidth", false)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadAllInv.End
+
+Program.Sub.loadCaptions.Start
+v.Local.sUserField.Declare
+v.Local.sCaption.Declare
+v.Local.sFieldNames.Declare
+v.Local.iCnt.Declare
+v.Local.bRead.Declare
+v.Local.bEdit.Declare
+
+v.Local.bRead.Set(v.Screen.F_UserFieldDash!optView.Value)
+v.Local.bEdit.Set(v.Screen.F_UserFieldDash!optEdit.Value)
+f.Intrinsic.Control.Try
+	
+'Set Properties for GSS Parts.
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Part", "HeaderFontBold", True)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Part", "ReadOnly", True)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV","Part", "AllowEdit", False)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV","Part", "HeaderHAlignment", "Center")
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Part", "MinWidth", 150)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Part", "Caption", "Part")
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Part", "Fixed", "Left")
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Part", "HeaderBackColor", v.Color.GSS)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Part", "HeaderForeColor", v.Color.White)
+	
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Location", "HeaderFontBold", True)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Location", "Visible", False)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Location", "ReadOnly", True)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Location", "AllowEdit", False)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Location", "HeaderHAlignment", "Center")
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Location", "MinWidth", 150)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Location", "Caption", "Location")
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Location", "Fixed", "Left")
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Location", "HeaderBackColor", v.Color.GSS)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Location", "HeaderForeColor", v.Color.White)
+	
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description", "HeaderFontBold", True)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description", "ReadOnly", True)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV","Description", "AllowEdit", False)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV","Description", "HeaderHAlignment", "Center")
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description", "MinWidth", 150)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description", "Caption", "Description")
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description", "Fixed", "Left")
+''	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description", "HeaderBackColor", v.Color.GSS)
+''	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description", "HeaderForeColor", v.Color.White)
+	
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Product_Line", "HeaderFontBold", True)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Product_Line", "ReadOnly", True)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV","Product_Line", "AllowEdit", False)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV","Product_Line", "HeaderHAlignment", "Center")
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV","Product_Line", "CellHAlignment", "Center")
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Product_Line", "MinWidth", 70)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Product_Line", "Caption", "PL")
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Product_Line", "Fixed", "None")
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Product_Line", "HeaderBackColor", v.Color.GSS)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Product_Line", "HeaderForeColor", v.Color.White)
+	
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description_2", "HeaderFontBold", True)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description_2", "ReadOnly", True)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV","Description_2", "AllowEdit", False)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV","Description_2", "HeaderHAlignment", "Center")
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description_2", "MinWidth", 150)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description_2", "Caption", "Description 2")
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description_2", "Fixed", "None")
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description_2", "HeaderBackColor", v.Color.GSS)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description_2", "HeaderForeColor", v.Color.White)
+	
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description_3", "HeaderFontBold", True)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description_3", "ReadOnly", True)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV","Description_3", "AllowEdit", False)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV","Description_3", "HeaderHAlignment", "Center")
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description_3", "MinWidth", 150)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description_3", "Caption", "Description 3")
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description_3", "Fixed", "None")
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description_3", "HeaderBackColor", v.Color.GSS)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "Description_3", "HeaderForeColor", v.Color.White)
+	
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "QTY_OnHand", "HeaderFontBold", True)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "QTY_OnHand", "ReadOnly", True)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV","QTY_OnHand", "AllowEdit", False)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV","QTY_OnHand", "HeaderHAlignment", "Center")
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "QTY_OnHand", "MinWidth", 100)
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "QTY_OnHand", "Caption", "Qty On Hand")
+	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "QTY_OnHand", "Fixed", "None")
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "QTY_OnHand", "HeaderBackColor", v.Color.GSS)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "QTY_OnHand", "HeaderForeColor", v.Color.White)
+	
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "DictionaryCol", "HeaderFontBold", True)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "DictionaryCol", "ReadOnly", True)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV","DictionaryCol", "AllowEdit", False)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV","DictionaryCol", "HeaderHAlignment", "Center")
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "DictionaryCol", "MinWidth", 100)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "DictionaryCol", "Caption", "Qty On Hand")
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "DictionaryCol", "Fixed", "None")
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "DictionaryCol", "HeaderBackColor", v.Color.GSS)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", "DictionaryCol", "HeaderForeColor", v.Color.White)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV","DictionaryCol", "Visible", False)
+	
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Location", "Visible", False)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer_Part", "Visible", False)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Description", "Visible", False)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Vendor", "Visible", False)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "QTY_OnHand", "Visible", False)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Product_Line", "Visible", False)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Part", "Visible", False)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Name", "Visible", False)
+	
+'	Set Properties for Xref Parts.	
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Part", "HeaderFontBold", True)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Part", "ReadOnly", True)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Part", "AllowEdit", False)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Part", "HeaderHAlignment", "Center")
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Part", "MinWidth", 150)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Part", "Caption", "Part")
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Part", "Fixed", "Left")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Part", "HeaderBackColor", v.Color.GSS)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Part", "HeaderForeColor", v.Color.White)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Part", "VisibleIndex", 0)
+	
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Location", "HeaderFontBold", True)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Location", "ReadOnly", True)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Location", "AllowEdit", False)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Location", "Visible", False)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Location", "HeaderHAlignment", "Center")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Location", "MinWidth", 150)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Location", "Caption", "Location")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Location", "Fixed", "Left")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Location", "HeaderBackColor", v.Color.GSS)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Location", "HeaderForeColor", v.Color.White)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Location", "VisibleIndex", 1)
+	
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer", "HeaderFontBold", True)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer", "ReadOnly", True)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer", "AllowEdit", False)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer", "HeaderHAlignment", "Center")
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer", "MinWidth", 60)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer", "Caption", "Customer")
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer", "Fixed", "Left")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer", "HeaderBackColor", v.Color.GSS)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer", "HeaderForeColor", v.Color.White)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer", "VisibleIndex", 1)
+	
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Name_Customer", "HeaderFontBold", True)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Name_Customer", "ReadOnly", True)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Name_Customer", "AllowEdit", False)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Name_Customer", "HeaderHAlignment", "Center")
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Name_Customer", "MinWidth", 150)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Name_Customer", "Caption", "Customer Name")
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Name_Customer", "Fixed", "Left")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Name_Customer", "HeaderBackColor", v.Color.GSS)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Name_Customer", "HeaderForeColor", v.Color.White)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Name_Customer", "VisibleIndex", 2)
+	
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Address", "HeaderFontBold", True)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Address", "ReadOnly", True)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Address", "AllowEdit", False)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Address", "HeaderHAlignment", "Center")
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Address", "CellHAlignment", "Left")
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Address", "MinWidth", 150)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Address", "Caption", "Address")
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Address", "Fixed", "Left")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Address", "HeaderBackColor", v.Color.GSS)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Address", "HeaderForeColor", v.Color.White)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Address", "VisibleIndex", 3)
+	
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Contact", "HeaderFontBold", True)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Contact", "ReadOnly", True)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Contact", "AllowEdit", False)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Contact", "HeaderHAlignment", "Center")
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Contact", "CellHAlignment", "Left")
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Contact", "MinWidth", 150)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Contact", "Caption", "Contact")
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Contact", "Fixed", "Left")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Contact", "HeaderBackColor", v.Color.GSS)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Contact", "HeaderForeColor", v.Color.White)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Contact", "VisibleIndex", 4)
+	
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "PhoneNo", "HeaderFontBold", True)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "PhoneNo", "ReadOnly", True)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "PhoneNo", "AllowEdit", False)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "PhoneNo", "HeaderHAlignment", "Center")
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "PhoneNo", "CellHAlignment", "Left")
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "PhoneNo", "MinWidth", 70)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "PhoneNo", "Caption", "Phone No")
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "PhoneNo", "Fixed", "Left")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "PhoneNo", "HeaderBackColor", v.Color.GSS)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "PhoneNo", "HeaderForeColor", v.Color.White)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "PhoneNo", "VisibleIndex", 5)
+	
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Email", "HeaderFontBold", True)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Email", "ReadOnly", True)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Email", "AllowEdit", False)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Email", "HeaderHAlignment", "Center")
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Email", "CellHAlignment", "Left")
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Email", "MinWidth", 150)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Email", "Caption", "Email")
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Email", "Fixed", "Left")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Email", "HeaderBackColor", v.Color.GSS)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Email", "HeaderForeColor", v.Color.White)
+	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Email", "VisibleIndex", 6)
+'	
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer_Part", "HeaderFontBold", True)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer_Part", "ReadOnly", True)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer_Part", "AllowEdit", False)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer_Part", "Visible", False)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer_Part", "HeaderHAlignment", "Center")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer_Part", "MinWidth", 150)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer_Part", "Caption", "Customer Part")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer_Part", "Fixed", "Left")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer_Part", "HeaderBackColor", v.Color.GSS)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer_Part", "HeaderForeColor", v.Color.White)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Customer_Part", "VisibleIndex", 4)
+	
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Description", "HeaderFontBold", True)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Description", "ReadOnly", True)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Description", "AllowEdit", False)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Description", "HeaderHAlignment", "Center")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Description", "MinWidth", 150)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Description", "Caption", "Description")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Description", "Fixed", "Left")
+''	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Description", "HeaderBackColor", v.Color.GSS)
+''	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Description", "HeaderForeColor", v.Color.White)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Description", "VisibleIndex", 7)
+'	
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Vendor", "HeaderFontBold", True)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Vendor", "ReadOnly", True)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Vendor", "AllowEdit", False)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Vendor", "HeaderHAlignment", "Center")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Vendor", "MinWidth", 150)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Vendor", "Caption", "Vendor")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Vendor", "Fixed", "None")
+''	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Vendor", "HeaderBackColor", v.Color.GSS)
+''	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Vendor", "HeaderForeColor", v.Color.White)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Vendor", "VisibleIndex", 8)
+'	
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "QTY_OnHand", "HeaderFontBold", True)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "QTY_OnHand", "ReadOnly", True)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "QTY_OnHand", "AllowEdit", False)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "QTY_OnHand", "HeaderHAlignment", "Center")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "QTY_OnHand", "MinWidth", 100)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "QTY_OnHand", "Caption", "Qty On Hand")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "QTY_OnHand", "Fixed", "None")
+''	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "QTY_OnHand", "HeaderBackColor", v.Color.GSS)
+''	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "QTY_OnHand", "HeaderForeColor", v.Color.White)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "QTY_OnHand", "VisibleIndex", 9)
+	
+'	gui'.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Product_Line", "HeaderFontBold", True)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Product_Line", "ReadOnly", True)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Product_Line", "AllowEdit", False)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Product_Line", "HeaderHAlignment", "Center")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Product_Line", "CellHAlignment", "Center")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Product_Line", "MinWidth", 70)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Product_Line", "Caption", "PL")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Product_Line", "Fixed", "None")
+''	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Product_Line", "HeaderBackColor", v.Color.GSS)
+''	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Product_Line", "HeaderForeColor", v.Color.White)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "Product_Line", "VisibleIndex", 10)
+'	
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Part", "HeaderFontBold", True)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Part", "ReadOnly", True)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Part", "AllowEdit", False)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Part", "HeaderHAlignment", "Center")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Part", "CellHAlignment", "Center")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Part", "MinWidth", 70)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Part", "Caption", "MFG Part")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Part", "Fixed", "None")
+''	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Part", "HeaderBackColor", v.Color.GSS)
+''	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Part", "HeaderForeColor", v.Color.White)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Part", "VisibleIndex", 11)
+	
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Name", "HeaderFontBold", True)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Name", "ReadOnly", True)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Name", "AllowEdit", False)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Name", "HeaderHAlignment", "Center")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Name", "CellHAlignment", "Center")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Name", "MinWidth", 70)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Name", "Caption", "MFG Name")
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Name", "Fixed", "None")
+''	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Name", "HeaderBackColor", v.Color.GSS)
+''	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Name", "HeaderForeColor", v.Color.White)
+'	gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", "MFG_Name", "VisibleIndex", 12)
+	
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("XrefPartGV", "DictionaryCol", "HeaderFontBold", True)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("XrefPartGV", "DictionaryCol", "ReadOnly", True)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("XrefPartGV","DictionaryCol", "AllowEdit", False)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("XrefPartGV","DictionaryCol", "HeaderHAlignment", "Center")
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("XrefPartGV", "DictionaryCol", "MinWidth", 100)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("XrefPartGV", "DictionaryCol", "Caption", "Qty On Hand")
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("XrefPartGV", "DictionaryCol", "Fixed", "None")
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("XrefPartGV", "DictionaryCol", "HeaderBackColor", v.Color.GSS)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("XrefPartGV", "DictionaryCol", "HeaderForeColor", v.Color.White)
+'	gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("XrefPartGV","DictionaryCol", "Visible", False)
+	
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, 59, 1)
+		v.Local.sUserField.Set(v.DataView.ufCaptions!gssPartUFCaption(v.Local.iCnt).User_Field!FieldValTrim)
+		v.Local.sCaption.Set(v.DataView.ufCaptions!gssPartUFCaption(v.Local.iCnt).User_Field_Caption!FieldValTrim)
+'		gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", v.Local.sUserField, "Caption", v.Local.sCaption)
+'		gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", v.Local.sUserField, "HeaderHAlignment", "Center")
+'		gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", v.Local.sUserField, "HeaderFontBold", True)
+'		gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", v.Local.sUserField, "MinWidth", 150)
+'		gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", v.Local.sUserField, "ReadOnly", v.Local.bRead)
+'		gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", v.Local.sUserField, "AllowEdit", v.Local.bEdit)
+'		gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", v.Local.sUserField, "HeaderBackColor", v.Color.GSS)
+'		gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", v.Local.sUserField, "HeaderForeColor", v.Color.White)
+'		gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", v.Local.sUserField, "MaxLength", 128)
+'		
+'		f.Intrinsic.Control.If(v.Global.bShow)
+'			f.Intrinsic.Control.If(v.Local.sCaption.Trim, =, "")
+'				gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", v.Local.sUserField, "Visible", False)
+'			f.Intrinsic.Control.EndIf
+'		f.Intrinsic.Control.EndIf
+		
+		v.Local.sUserField.Set(v.DataView.ufCaptions!xrfPartUFCaption(v.Local.iCnt).User_Field!FieldValTrim)
+		v.Local.sCaption.Set(v.DataView.ufCaptions!xrfPartUFCaption(v.Local.iCnt).User_Field_Caption!FieldValTrim)
+		gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", v.Local.sUserField, "Caption", v.Local.sCaption)
+		gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", v.Local.sUserField, "HeaderHAlignment", "Center")
+		gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", v.Local.sUserField, "HeaderFontBold", True)
+		gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", v.Local.sUserField, "MinWidth", 150)
+		gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", v.Local.sUserField, "ReadOnly", v.Local.bRead)
+		gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", v.Local.sUserField, "AllowEdit", v.Local.bEdit)
+'		gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", v.Local.sUserField, "HeaderBackColor", v.Color.GSS)
+'		gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", v.Local.sUserField, "HeaderForeColor", v.Color.White)
+		gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", v.Local.sUserField, "MaxLength", 128)
+		
+		f.Intrinsic.Control.If(v.Global.bShow)
+			f.Intrinsic.Control.If(v.Local.sCaption.Trim, =, "")
+				gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", v.Local.sUserField, "Visible", False)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+		
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+'	gui.F_UserFieldDash.GsGridControl1.SetGridViewProperty("GssPartGV","OptionsViewShowAutoFilterRow",True)
+'	gui.F_UserFieldDash.GsGridControl2.SetGridViewProperty("XrefPartGV","OptionsViewShowAutoFilterRow",True)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadCaptions.End
+
+Program.Sub.cmdGssPartFilter_Click.Start
+v.Local.sPartFilter.Declare
+v.Local.sPL_Filter.Declare
+f.Intrinsic.Control.Try
+	v.Local.sPartFilter.Set(v.Screen.F_UserFieldDash!txtGssPart.Text)
+	v.Local.sPL_Filter.Set(v.Screen.F_UserFieldDash!txtGssPL.Text)
+	v.Global.sGssFilter.Set("")
+	v.Global.sXrefFilter.Set("")
+	f.Intrinsic.Control.If(v.Local.sPartFilter, !=, "")
+		f.Intrinsic.String.Build("Part = '{0}'", v.Local.sPartFilter, v.Global.sGssFilter)
+		f.Intrinsic.String.Build("Part = '{0}'", v.Local.sPartFilter, v.Global.sXrefFilter)
+		f.Intrinsic.Control.If(v.Local.sPL_Filter, !=, "")
+			f.Intrinsic.String.Build("{0} and Product_Line = '{1}'", v.Global.sGssFilter, v.Local.sPL_Filter, v.Global.sGssFilter)
+			v.Global.sXrefFilter.Set(v.Global.sGssFilter)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.ElseIf(v.Local.sPL_Filter, !=, "")
+		f.Intrinsic.String.Build("Product_Line = '{0}'", v.Local.sPL_Filter, v.Global.sGssFilter)
+		f.Intrinsic.String.Build("Product_Line = '{0}'", v.Local.sPL_Filter, v.Global.sXrefFilter)
+	f.Intrinsic.Control.EndIf
+	
+	f.Data.DataView.SetFilter("gssPartUfDT", "gssPartUfDV", v.Global.sGssFilter)
+	f.Data.DataView.SetFilter("xrefPartUFDT", "xrefPartUFDV", v.Global.sXrefFilter)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdGssPartFilter_Click.End
+
+Program.Sub.cmdXrefFilter_Click.Start
+v.Local.sPartFilter.Declare
+v.Local.sPL_Filter.Declare
+v.Local.sCustomerFilter.Declare
+v.Local.sCustomerPartFilter.Declare
+v.Local.sTemp.Declare
+v.Local.sPartList.Declare
+
+f.Intrinsic.Control.Try
+	v.Local.sPartFilter.Set(v.Screen.F_UserFieldDash!txtXrefPart.Text)	
+	v.Local.sPL_Filter.Set(v.Screen.F_UserFieldDash!txtXrefPL.Text)
+	v.Local.sCustomerFilter.Set(v.Screen.F_UserFieldDash!txtXrefCustomer.Text)
+	v.Local.sCustomerPartFilter.Set(v.Screen.F_UserFieldDash!txtXrefCustomerPart.Text)
+	v.Global.sGssFilter.Set("")
+	v.Global.sXrefFilter.Set("")
+	f.Intrinsic.Control.If(v.Local.sPartFilter, !=, "")
+		f.Intrinsic.String.Build("Part = '{0}'", v.Local.sPartFilter, v.Global.sGssFilter)
+		f.Intrinsic.String.Build("Part = '{0}'", v.Local.sPartFilter, v.Global.sXrefFilter)
+		
+		f.Intrinsic.Control.If(v.Local.sPL_Filter.Trim, !=, "")
+			f.Intrinsic.String.Build("{0} and Product_Line = '{1}'", v.Global.sGssFilter, v.Local.sPL_Filter, v.Global.sGssFilter)
+			v.Global.sXrefFilter.Set(v.Global.sGssFilter)
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.Control.If(v.Local.sCustomerFilter.Trim, !=, "")
+			f.Intrinsic.String.Build("{0} and Customer = '{1}'", v.Global.sGssFilter, v.Local.sCustomerFilter.Trim, v.Global.sXrefFilter)
+			'v.Global.sXrefFilter.Set(v.Global.sGssFilter)
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.Control.If(v.Local.sCustomerPartFilter.Trim, !=, "")
+			f.Intrinsic.String.Build("{0} and Customer_Part = '{1}'", v.Global.sGssFilter, v.Local.sCustomerPartFilter, v.Global.sXrefFilter)
+			'v.Global.sXrefFilter.Set(v.Global.sGssFilter)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.ElseIf(v.Local.sPL_Filter.Trim, !=, "")
+		f.Intrinsic.String.Build("Product_Line = '{0}'", v.Local.sPL_Filter, v.Global.sGssFilter)
+		f.Intrinsic.String.Build("Product_Line = '{0}'", v.Local.sPL_Filter, v.Global.sXrefFilter)
+		
+		f.Intrinsic.Control.If(v.Local.sCustomerFilter.Trim, !=, "")
+			f.Intrinsic.String.Build("{0} and Customer = '{1}'", v.Global.sGssFilter, v.Local.sCustomerFilter.Trim, v.Global.sGssFilter)
+			v.Global.sXrefFilter.Set(v.Global.sGssFilter)
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.Control.If(v.Local.sCustomerPartFilter.Trim, !=, "")
+			f.Intrinsic.String.Build("{0} and Customer_Part = '{1}'", v.Global.sGssFilter, v.Local.sCustomerPartFilter, v.Global.sGssFilter)
+			v.Global.sXrefFilter.Set
+		f.Intrinsic.Control.EndIf			
+		
+	f.Intrinsic.Control.ElseIf(v.Local.sCustomerFilter.Trim, !=, "")
+		'f.Intrinsic.String.Build("Customer = '{0}'", v.Local.sCustomerFilter, v.Global.sGssFilter)
+		f.Intrinsic.String.Build("Customer = '{0}'", v.Local.sCustomerFilter.Trim, v.Global.sXrefFilter)
+		
+		f.Intrinsic.Control.If(v.Local.sCustomerPartFilter.Trim, !=, "")
+			f.Intrinsic.String.Build("{0} and Customer_Part = '{1}'", v.Global.sGssFilter, v.Local.sCustomerPartFilter, v.Global.sGssFilter)
+			v.Global.sXrefFilter.Set
+		f.Intrinsic.Control.EndIf	
+	
+	f.Intrinsic.Control.ElseIf(v.Local.Customer_Part.Trim, !=, "")
+		'f.Intrinsic.String.Build("Customer_Part = '{0}'", v.Local.sCustomerFilter, v.Global.sGssFilter)
+		f.Intrinsic.String.Build("Customer_Part = '{0}'", v.Local.sCustomerFilter.Trim, v.Global.sXrefFilter)
+	f.Intrinsic.Control.EndIf
+		
+	f.Data.DataView.SetFilter("xrefPartUFDT", "xrefPartUFDV", v.Global.sXrefFilter)
+	f.Data.DataView.ToDataTableDistinct("xrefPartUFDT", "xrefPartUFDV", "partListDT", "Part")
+	f.Data.DataView.Create("partListDT", "partListDV", 22)
+	f.Data.DataView.ToString("xrefPartUFDT", "xrefPartUFDV", "Part", "*!*", "','", v.Local.sPartList)
+	f.Intrinsic.String.Build("Part in ('{0}')", v.Local.sPartList, v.Global.sGssFilter)
+	
+	f.Data.DataView.SetFilter("gssPartUfDT", "gssPartUfDV", v.Global.sGssFilter)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdXrefFilter_Click.End
+
+Program.Sub.cmdGssPartBrw_Click.Start
+v.Local.sTemp.Declare
+v.Local.sPart.Declare
+f.Intrinsic.Control.Try
+'	f.Intrinsic.UI.Browser(105, "", v.Local.sTemp)
+'	f.Intrinsic.Control.If(v.Local.sTemp, !=, "***CANCEL***")
+'		f.Intrinsic.String.Split(v.Local.sTemp, "*!*", v.Local.sPart)
+'		gui.F_UserFieldDash.txtGssPart.Text(v.Local.sPart(0))
+'	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdGssPartBrw_Click.End
+
+Program.Sub.cmdGssPLBrw_Click.Start
+v.Local.sTemp.Declare
+v.Local.sPL.Declare
+f.Intrinsic.Control.Try
+'	f.Intrinsic.UI.Browser(130, "", v.Local.sTemp)
+'	f.Intrinsic.Control.If(v.Local.sTemp, !=, "***CANCEL***")
+'		f.Intrinsic.String.Split(v.Local.sTemp, "*!*", v.Local.sPL)
+'		gui.F_UserFieldDash.txtGssPL.Text(v.Local.sPL(0))
+'	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdGssPLBrw_Click.End
+
+Program.Sub.cmdLoadAll_Click.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.If(v.DataView.GssPartDT!gssPartUfDV.Exists)
+		f.Data.DataView.Close("gssPartUfDT", "gssPartUfDV")
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.DataTable.gssPartUfDT.Exists)
+		f.Data.DataTable.Close("gssPartUfDT")
+	f.Intrinsic.Control.EndIf
+
+	f.Intrinsic.Control.If(v.DataView.xrefPartUFDT!xrefPartUFDV.Exists)
+		f.Data.DataView.Close("xrefPartUFDT", "xrefPartUFDV")
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.DataTable.xrefPartUFDT.Exists)
+		f.Data.DataTable.Close("xrefPartUFDT")
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.CallSub(loadAllInv)	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdLoadAll_Click.End
+
+Program.Sub.cmdXrefPartBrw_Click.Start
+v.Local.sTemp.Declare
+v.Local.sPart.Declare
+f.Intrinsic.Control.Try
+	f.Intrinsic.UI.Browser(105, "", v.Local.sTemp)
+	f.Intrinsic.Control.If(v.Local.sTemp, !=, "***CANCEL***")
+		f.Intrinsic.String.Split(v.Local.sTemp, "*!*", v.Local.sPart)
+		gui.F_UserFieldDash.txtXrefPart.Text(v.Local.sPart(0))
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdXrefPartBrw_Click.End
+
+Program.Sub.cmdXrefCustomerBrw_Click.Start
+v.Local.sTemp.Declare
+v.Local.sCustomer.Declare
+f.Intrinsic.Control.Try
+	f.Intrinsic.UI.Browser(205, "", v.Local.sTemp)
+	f.Intrinsic.Control.If(v.Local.sTemp, !=, "***CANCEL***")
+		f.Intrinsic.String.Split(v.Local.sTemp, "*!*", v.Local.sCustomer)
+		gui.F_UserFieldDash.txtXrefCustomer.Text(v.Local.sCustomer(0))
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdXrefCustomerBrw_Click.End
+
+Program.Sub.cmdXrefCustomerPartBrw_Click.Start
+v.Local.sTemp.Declare
+f.Intrinsic.Control.Try
+
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Intrinsic.UI.Browser("Select Customer Part", "con", "Select Part, Description, Customer, Customer_Part, Vendor from INV_CROSS_REF","Part*!*Description*!*Customer*!*Customer_Part*!*Vendor", "80*!*150*!*80*!*80*!*80", v.Local.sTemp)
+	f.ODBC.Connection!con.Close
+	
+	f.Intrinsic.Control.If(v.Local.sTemp, !=, "***CANCEL***")
+		f.Intrinsic.String.Split(v.Local.sTemp, "*!*", v.Local.sTemp)
+		gui.F_UserFieldDash.txtXrefPart.Text(v.Local.sTemp(0))
+		gui.F_UserFieldDash.txtXrefCustomer.Text(v.Local.sTemp(2))
+		gui.F_UserFieldDash.txtGssPart.Text(v.Local.sTemp(3))
+		gui.F_UserFieldDash.txtXrefCustomerPart.Text(v.Local.sTemp(3))
+	f.Intrinsic.Control.EndIf	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdXrefCustomerPartBrw_Click.End
+
+Program.Sub.cmdXrefPLBrw_Click.Start
+v.Local.sTemp.Declare
+v.Local.sPL.Declare
+f.Intrinsic.Control.Try
+	f.Intrinsic.UI.Browser(130, "", v.Local.sTemp)
+	f.Intrinsic.Control.If(v.Local.sTemp, !=, "***CANCEL***")
+		f.Intrinsic.String.Split(v.Local.sTemp, "*!*", v.Local.sPL)
+		gui.F_UserFieldDash.txtXrefPL.Text(v.Local.sPL(0))
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdXrefPLBrw_Click.End
+
+Program.Sub.cmdSave_Click.Start
+v.Local.sFilePath.Declare
+v.Local.iMatchRow.Declare
+v.Local.iDBMatchRow.Declare
+v.Local.bFileExists.Declare
+v.Local.sText.Declare
+v.Local.sSQL.Declare
+f.Intrinsic.Control.Try
+	gui.F_UserFieldDash..Enabled(false)
+	
+	f.Intrinsic.Control.If(v.DataTable.gssPartToDB.Exists)
+		f.Data.DataTable.Close("gssPartToDB")
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.DataTable.xrefPartToDB.Exists)
+		f.Data.DataTable.Close("xrefPartToDB")
+	f.Intrinsic.Control.EndIf
+	
+	f.Data.DataView.SetFilter("gssPartUfDT", "gssPartUfDV", "")
+	f.Data.DataTable.AcceptChanges("gssPartUfDT")
+	f.Data.DataView.SetFilter("xrefPartUFDT", "xrefPartUFDV", "")
+	f.Data.DataTable.AcceptChanges("xrefPartUFDT")
+	f.Data.DataView.ToDataTable("gssPartUfDT", "gssPartUfDV", "gssPartToDB")
+	f.Data.DataView.ToDataTable("xrefPartUFDT", "xrefPartUFDV", "xrefPartToDB")
+	f.Data.DataTable.RemoveColumn("xrefPartToDB", "Name_Customer")
+	
+	f.Data.DataView.Create("gssPartToDB", "DBgssPartUfDV", 22)
+	f.Data.DataView.Create("xrefPartToDB", "DBxrefPartUFDV", 22)
+	
+	f.Intrinsic.UI.InvokeWaitDialog("Saving...")
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Intrinsic.UI.ChangeWaitStatus("Saving GSS Part User Fields...", 25, 0, 100)
+		f.Intrinsic.String.Build("{0}\CUSTOM\GCG_5506\gssPartCSV_{1}{2}.csv", v.Caller.GlobalDir, v.Caller.CompanyCode, v.Caller.Terminal, v.Local.sFilePath)
+		v.Local.iMatchRow.Set(v.DataTable.gssPartToDB.RowCount)
+
+		f.Data.DataView.ToString("gssPartToDB", "DBgssPartUfDV", v.DataTable.gssPartToDB.FieldNames, ",", v.Ambient.NewLine, v.Local.sText)
+		
+		f.Intrinsic.File.Exists(v.Local.sFilePath, v.Local.bFileExists)
+		f.Intrinsic.Control.If(v.Local.bFileExists)
+			f.Intrinsic.File.DeleteFile(v.Local.sFilePath)
+			v.Local.bFileExists.Set(false)
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.File.String2File(v.Local.sFilePath, v.Local.sText)		
+		f.Intrinsic.File.Exists(v.Local.sFilePath, v.Local.bFileExists)
+'		
+'		f.Intrinsic.Control.If(v.Local.bFileExists)
+'			f.Intrinsic.Control.If(v.Global.bSaveSingle)
+'				f.Intrinsic.String.Build("Delete From GCG_5506_GssPartUF where Part = '{0}'", v.Global.sPart, v.Local.sSQL)
+'			f.Intrinsic.Control.Else
+'				v.Local.sSQL.Set("Delete From GCG_5506_GssPartUF")
+'			f.Intrinsic.Control.EndIf
+'			f.ODBC.Connection!con.Execute(v.Local.sSQL)
+'			f.Data.DataTable.SaveToDB("gssPartToDB", "con", "GCG_5506_GssPartUF", "Part*!*Location", 1)
+'			v.Local.bFileExists.Set(false)
+'		f.Intrinsic.Control.EndIf
+'		
+'		f.Intrinsic.Control.If(v.Global.bSaveSingle)
+'			f.Intrinsic.String.Build("select count (*) from GCG_5506_GssPartUF where Part = '{0}'", v.Global.sPart, v.Local.sSQL)
+'		f.Intrinsic.Control.Else
+'			v.Local.sSQL.Set("select count (*) from GCG_5506_GssPartUF")
+'		f.Intrinsic.Control.EndIf	
+'		
+'		f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.iDBMatchRow)
+'		f.Intrinsic.Control.If(v.Local.iMatchRow, <>, v.Local.iDBMatchRow)
+'			f.Intrinsic.String.Build("An error while saving has ocurred. Please Contact Global Shop.{0}Please Load back up file from: {1}{0}To Data table: GCG_5506_GssPartUF", v.Ambient.NewLine, v.Local.sFilePath, v.Local.sText)
+'			f.Intrinsic.UI.Msgbox(v.Local.sText)
+'			f.ODBC.Connection!con.Close	
+'			f.Intrinsic.Control.End
+'		f.Intrinsic.Control.EndIf
+		
+		'Save XREF
+		f.Intrinsic.UI.ChangeWaitStatus("Saving Cross Reference User Fields...", 75, 0, 100)
+		f.Intrinsic.String.Build("{0}\CUSTOM\GCG_5506\xrefPartCSV_{1}{2}.csv", v.Caller.GlobalDir, v.Caller.CompanyCode, v.Caller.Terminal, v.Local.sFilePath)
+		v.Local.iMatchRow.Set(v.DataTable.xrefPartToDB.RowCount)
+		
+		f.Data.DataView.ToString("xrefPartToDB", "DBxrefPartUFDV", v.DataTable.xrefPartToDB.FieldNames, ",", v.Ambient.NewLine, v.Local.sText)
+		
+		f.Intrinsic.File.Exists(v.Local.sFilePath, v.Local.bFileExists)
+		f.Intrinsic.Control.If(v.Local.bFileExists)
+			f.Intrinsic.File.DeleteFile(v.Local.sFilePath)
+			v.Local.bFileExists.Set(false)
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.File.String2File(v.Local.sFilePath, v.Local.sText)		
+		f.Intrinsic.File.Exists(v.Local.sFilePath, v.Local.bFileExists)
+		
+		f.Intrinsic.Control.If(v.Local.bFileExists)
+			f.Intrinsic.Control.If(v.Global.bSaveSingle)
+				f.Intrinsic.String.Build("Delete From GCG_5506_XrefPartUF where Part = '{0}'", v.Global.sPart, v.Local.sSQL)
+			f.Intrinsic.Control.Else
+				v.Local.sSQL.Set("Delete From GCG_5506_XrefPartUF")
+			f.Intrinsic.Control.EndIf
+			f.ODBC.Connection!con.Execute(v.Local.sSQL)
+			
+			F.Data.DataTable.RemoveColumn("xrefPartToDB", "Address")
+			F.Data.DataTable.RemoveColumn("xrefPartToDB", "Contact")
+			F.Data.DataTable.RemoveColumn("xrefPartToDB", "PhoneNo")
+			F.Data.DataTable.RemoveColumn("xrefPartToDB", "Email")
+			
+			f.Data.DataTable.SaveToDB("xrefPartToDB", "con", "GCG_5506_XrefPartUF", "Part*!*Location*!*Customer*!*Customer_Part", 1)
+			v.Local.bFileExists.Set(false)
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.Control.If(v.Global.bSaveSingle)
+			f.Intrinsic.String.Build("select count (*) from GCG_5506_XrefPartUF where Part = '{0}'", v.Global.sPart, v.Local.sSQL)
+		f.Intrinsic.Control.Else
+			v.Local.sSQL.Set("select count (*) from GCG_5506_XrefPartUF")
+		f.Intrinsic.Control.EndIf	
+		
+		f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL, v.Local.iDBMatchRow)
+		f.Intrinsic.Control.If(v.Local.iMatchRow, <>, v.Local.iDBMatchRow)
+			f.Intrinsic.String.Build("An error while saving has ocurred. Please Contact Global Shop.{0}Please Load back up file from: {1}{0}To Data table: GCG_5506_XrefPartUF", v.Ambient.NewLine, v.Local.sFilePath, v.Local.sText)
+			f.Intrinsic.UI.Msgbox(v.Local.sText)
+			f.ODBC.Connection!con.Close	
+			f.Intrinsic.Control.End
+		f.Intrinsic.Control.EndIf
+		
+	f.ODBC.Connection!con.Close	
+	f.Intrinsic.UI.CloseWaitDialog
+
+	f.Data.DataView.Close("gssPartToDB", "DBgssPartUfDV")
+	f.Data.DataTable.Close("gssPartToDB")
+	f.Data.DataView.Close("xrefPartToDB", "DBxrefPartUFDV")
+	f.Data.DataTable.Close("xrefPartToDB")	
+	
+	gui.F_UserFieldDash..Enabled(True)
+	
+	f.Intrinsic.Control.If(v.Global.bSave)
+	f.Intrinsic.Control.Else
+		'f.Intrinsic.UI.Msgbox("Saving Complete.")
+	f.Intrinsic.Control.EndIf	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.CloseWaitDialog
+	gui.F_UserFieldDash..Enabled(True)
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.loadSingleInv.Start
+v.Local.iQty.Declare
+v.Local.iCnt.Declare
+v.Local.sTemp.Declare
+v.Local.sSQL.Declare
+f.Intrinsic.Control.Try
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Intrinsic.String.Build("Select Part, Location, Description, Product_Line, Qty_OnHand, Part+Location as DictionaryCol from Inventory_Mstr where Part = '{0}'",v.Global.sPart, v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("inventoryMstr", "con", v.Local.sSQL)
+		
+		f.Intrinsic.String.Build("Select Part+Location as DictionaryCol, Location, Description_2, Description_3 from Inventory_Mst2 where Part = '{0}'",v.Global.sPart, v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("inventoryMst2", "con", v.Local.sSQL)
+		
+		f.Intrinsic.String.Build("Select Part, Location, Description, Customer, Customer_Part, Vendor,  MFG_Part, MFG_Name, Part+Location as DictionaryCol from INV_CROSS_REF where Part = '{0}'",v.Global.sPart, v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("inventoryCrossRef", "con", v.Local.sSQL)
+		
+		f.Data.DataTable.CreateFromSQL("ufCaptions", "con", "Select User_Field, UF_Type, UF_Captions, UF_ID from GCG_5506_UF_Captions Order by UF_ID asc", true)
+		
+		f.Intrinsic.String.Build("Select * from GCG_5506_GssPartUF where Part = '{0}'",v.Global.sPart, v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("gssPartUF", "con", v.Local.sSQL, true)
+		
+		f.Intrinsic.String.Build("Select * from GCG_5506_XrefPartUF where Part = '{0}'",v.Global.sPart, v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("xrefPartUF", "con", v.Local.sSQL, true)
+		
+		
+		f.Data.Dictionary.CreateFromSQL("customerDictionary", "con", "Select Customer, Name_Customer from Customer_Master")
+		f.Data.Dictionary.CreateFromDataTable("qtyOnhandDictionary", "inventoryMstr", "DictionaryCol", "Qty_OnHand", 4)
+		f.Data.Dictionary.CreateFromDataTable("productLineDictionary", "inventoryMstr", "DictionaryCol", "Product_Line", 4)
+		f.Data.Dictionary.CreateFromDataTable("desc1Dictionary", "inventoryMstr", "DictionaryCol", "Description", 4)
+		f.Data.Dictionary.CreateFromDataTable("desc2Dictionary", "inventoryMst2", "DictionaryCol", "Description_2", 4)
+		f.Data.Dictionary.CreateFromDataTable("desc3Dictionary", "inventoryMst2", "DictionaryCol", "Description_3", 4)
+	f.ODBC.Connection!con.Close
+	
+	f.Data.Linq.Join("leftJoin", "datatable", "inventoryMstr*!*i", "datatable", "gssPartUF*!*g", "i.Part = g.Part and i.Location = g.Location", "i.Part*!*i.Location*!*i.Description*!*i.Product_line*!*g.Description_2*!*g.Description_3*!*g.Qty_OnHand*!*g.UserField_1*!*g.UserField_2*!*g.UserField_3*!*g.UserField_4*!*g.UserField_5*!*g.UserField_6*!*g.UserField_7*!*g.UserField_8*!*g.UserField_9*!*g.UserField_10*!*g.UserField_11*!*g.UserField_12*!*g.UserField_13*!*g.UserField_14*!*g.UserField_15*!*g.UserField_16*!*g.UserField_17*!*g.UserField_18*!*g.UserField_19*!*g.UserField_20*!*g.UserField_21*!*g.UserField_22*!*g.UserField_23*!*g.UserField_24*!*g.UserField_25*!*g.UserField_26*!*g.UserField_27*!*g.UserField_28*!*g.UserField_29*!*g.UserField_30*!*g.UserField_31*!*g.UserField_32*!*g.UserField_33*!*g.UserField_34*!*g.UserField_35*!*g.UserField_36*!*g.UserField_37*!*g.UserField_38*!*g.UserField_39*!*g.UserField_40*!*g.UserField_41*!*g.UserField_42*!*g.UserField_43*!*g.UserField_44*!*g.UserField_45*!*g.UserField_46*!*g.UserField_47*!*g.UserField_48*!*g.UserField_49*!*g.UserField_50*!*g.UserField_51*!*g.UserField_52*!*g.UserField_53*!*g.UserField_54*!*g.UserField_55*!*g.UserField_56*!*g.UserField_57*!*g.UserField_58*!*g.UserField_59*!*g.UserField_60*!*i.DictionaryCol", "", "", "", "gssPartUfDT", true)
+	
+	f.Data.Linq.Join("leftJoin", "datatable", "inventoryCrossRef*!*i", "datatable", "xrefPartUF*!*g", "i.Part = g.Part and i.Location = g.Location and i.Customer = g.Customer and i.vendor = g.vendor", "i.Part*!*i.Location*!*i.Description*!*i.Customer*!*i.Customer_Part*!*g.Product_Line*!*g.Vendor*!*g.MFG_Part*!*g.MFG_Name*!*g.Qty_OnHand*!*g.UserField_1*!*g.UserField_2*!*g.UserField_3*!*g.UserField_4*!*g.UserField_5*!*g.UserField_6*!*g.UserField_7*!*g.UserField_8*!*g.UserField_9*!*g.UserField_10*!*g.UserField_11*!*g.UserField_12*!*g.UserField_13*!*g.UserField_14*!*g.UserField_15*!*g.UserField_16*!*g.UserField_17*!*g.UserField_18*!*g.UserField_19*!*g.UserField_20*!*g.UserField_21*!*g.UserField_22*!*g.UserField_23*!*g.UserField_24*!*g.UserField_25*!*g.UserField_26*!*g.UserField_27*!*g.UserField_28*!*g.UserField_29*!*g.UserField_30*!*g.UserField_31*!*g.UserField_32*!*g.UserField_33*!*g.UserField_34*!*g.UserField_35*!*g.UserField_36*!*g.UserField_37*!*g.UserField_38*!*g.UserField_39*!*g.UserField_40*!*g.UserField_41*!*g.UserField_42*!*g.UserField_43*!*g.UserField_44*!*g.UserField_45*!*g.UserField_46*!*g.UserField_47*!*g.UserField_48*!*g.UserField_49*!*g.UserField_50*!*g.UserField_51*!*g.UserField_52*!*g.UserField_53*!*g.UserField_54*!*g.UserField_55*!*g.UserField_56*!*g.UserField_57*!*g.UserField_58*!*g.UserField_59*!*g.UserField_60*!*i.DictionaryCol", "", "", "", "xrefPartUFDT", true)
+		
+	f.Data.Dictionary.SetDefaultReturn("qtyOnhandDictionary", "")
+	f.Data.DataTable.FillFromDictionary("xrefPartUFDT", "qtyOnhandDictionary", "DictionaryCol", "Qty_OnHand")
+'	f.Data.Dictionary.Close("qtyOnhandDictionary")
+	
+	f.Data.Dictionary.SetDefaultReturn("qtyOnhandDictionary", "")
+	f.Data.DataTable.FillFromDictionary("gssPartUfDT", "qtyOnhandDictionary", "DictionaryCol", "Qty_OnHand")
+	f.Data.Dictionary.Close("qtyOnhandDictionary")	
+	
+	f.Data.Dictionary.SetDefaultReturn("productLineDictionary", "")
+	f.Data.DataTable.FillFromDictionary("xrefPartUFDT", "productLineDictionary", "DictionaryCol", "Product_Line")
+	f.Data.Dictionary.Close("productLineDictionary")
+	
+	f.Data.Dictionary.SetDefaultReturn("desc1Dictionary", "")
+	f.Data.DataTable.FillFromDictionary("xrefPartUFDT", "desc1Dictionary", "DictionaryCol", "Description")
+	f.Data.Dictionary.Close("desc1Dictionary")
+	
+	f.Data.Dictionary.SetDefaultReturn("desc2Dictionary", "")
+	f.Data.DataTable.FillFromDictionary("gssPartUfDT", "desc2Dictionary", "DictionaryCol", "Description_2")
+	f.Data.Dictionary.Close("desc2Dictionary")
+	
+	f.Data.Dictionary.SetDefaultReturn("desc3Dictionary", "")
+	f.Data.DataTable.FillFromDictionary("gssPartUfDT", "desc3Dictionary", "DictionaryCol", "Description_3")
+	f.Data.Dictionary.Close("desc3Dictionary")
+	
+	f.Data.DataTable.AddColumn("xrefPartUFDT", "Name_Customer", "String")
+	f.Data.DataTable.SetValueFormat("xrefPartUFDT", -1, "Customer", "Name_Customer", ">" )
+	f.Data.Dictionary.SetDefaultReturn("customerDictionary", "")
+	f.Data.DataTable.FillFromDictionary("xrefPartUFDT", "customerDictionary", "Name_Customer", "Name_Customer")
+	f.Data.Dictionary.Close("customerDictionary")
+	
+	f.Data.DataTable.Close("inventoryMstr")
+	f.Data.DataTable.Close("inventoryMst2")
+	f.Data.DataTable.Close("inventoryCrossRef")
+	f.Data.DataTable.Close("gssPartUF")
+	f.Data.DataTable.Close("xrefPartUF")
+	f.Data.DataTable.RemoveColumn("gssPartUfDT", "DictionaryCol")
+	f.Data.DataTable.RemoveColumn("xrefPartUFDT", "DictionaryCol")
+	
+	f.Data.DataTable.AddExpressionColumn("ufCaptions", "User_Field_Caption", "String", "ISNULL(UF_Captions, User_Field)")
+	f.Data.DataView.Create("ufCaptions", "gssPartUFCaption", 22, "UF_Type = 'GSSPART'", "UF_ID ASC")
+	f.Data.DataView.Create("ufCaptions", "xrfPartUFCaption", 22, "UF_Type = 'XRFPART'", "UF_ID ASC")
+	v.Local.iQty.Set(v.DataTable.ufCaptions(0).UF_Captions!FieldValTrim)
+
+	
+	f.Data.DataView.Create("gssPartUfDT", "gssPartUfDV")
+	f.Data.DataView.Create("xrefPartUFDT", "xrefPartUFDV")	
+	
+	v.Global.bShow.Set(v.DataTable.ufCaptions(0).UF_Captions!FieldVal)
+	
+	gui.F_UserFieldDash.GsGridControl1.AddGridviewFromDataview("GssPartGV", "gssPartUfDT", "gssPartUfDV")
+	gui.F_UserFieldDash.GsGridControl1.MainView("GssPartGV")
+	gui.F_UserFieldDash.GsGridControl1.SetGridviewProperty("GssPartGV", "OptionsViewColumnAutoWidth", false)
+	
+	gui.F_UserFieldDash.GsGridControl2.AddGridviewFromDataview("XrefPartGV", "xrefPartUFDT", "xrefPartUFDV")
+	gui.F_UserFieldDash.GsGridControl2.MainView("XrefPartGV")
+	gui.F_UserFieldDash.GsGridControl2.SetGridviewProperty("XrefPartGV", "OptionsViewColumnAutoWidth", false)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadSingleInv.End
+
+Program.Sub.optView_Click.Start
+v.Local.sParam.Declare
+v.Local.sPath.Declare
+v.Local.iPiD.Declare
+
+f.Intrinsic.Control.Try
+'	f.Intrinsic.Control.CallSub(changeEdit, passedRead, v.Screen.F_UserFieldDash!optView.Value, passedEdit, v.Screen.F_UserFieldDash!optEdit.Value)
+	
+'	f.Intrinsic.String.Build("{0}!*!{1}", v.Screen.F_UserFieldDash!optEdit.Value, v.Caller.Hook, v.Global.passedParam)
+'	f.Intrinsic.String.Build("{0}\GCG_5506_UserField_Dash.g2u", v.Caller.GasDir, v.Global.passedPath)
+	gui.F_UserFieldDash..Visible(false)
+	
+	v.Global.bRelaunch.Set(True)
+	'f.Global.General.CallAsyncGAS(v.Local.sPath, v.Local.sParam, v.Local.iPiD)
+	
+	
+	f.Intrinsic.Control.If(v.Local.iPiD, >, -1)
+		v.Global.bSave.Set(true)
+		f.Intrinsic.Control.CallSub(Form_UnLoad)
+	f.Intrinsic.Control.Else	
+		gui.F_UserFieldDash..Visible(true)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.optView_Click.End
+
+Program.Sub.optEdit_Click.Start
+v.Local.sParam.Declare
+v.Local.sPath.Declare
+v.Local.iPiD.Declare
+
+f.Intrinsic.Control.Try
+'	f.Intrinsic.Control.CallSub(changeEdit, passedRead, v.Screen.F_UserFieldDash!optView.Value, passedEdit, v.Screen.F_UserFieldDash!optEdit.Value)
+'	f.Intrinsic.String.Build("{0}!*!{1}", v.Screen.F_UserFieldDash!optEdit.Value, v.Caller.Hook, v.Local.sParam)
+'	f.Intrinsic.String.Build("{0}\GCG_5506_UserField_Dash.g2u", v.Caller.GasDir, v.Local.sPath)
+	gui.F_UserFieldDash..Visible(false)
+
+	v.Global.bRelaunch.Set(True)
+'	f.Global.General.CallAsyncGAS(v.Local.sPath, v.Local.sParam, v.Local.iPiD)
+	
+	
+	f.Intrinsic.Control.If(v.Local.iPiD, >, -1)
+		v.Global.bSave.Set(false)
+		f.Intrinsic.Control.CallSub(Form_UnLoad)
+	f.Intrinsic.Control.Else	
+		gui.F_UserFieldDash..Visible(true)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.optEdit_Click.End
+
+Program.Sub.changeEdit.Start
+v.Local.sUserField.Declare
+v.Local.sCaption.Declare
+v.Local.iCnt.Declare
+v.Local.fWait.Declare
+v.Local.bRead.Declare
+v.Local.bEdit.Declare
+
+v.Local.bRead.Set(v.Args.passedRead)
+v.Local.bEdit.Set(v.Args.passedEdit)
+f.Intrinsic.Control.Try
+	f.Intrinsic.UI.InvokeWaitDialog("Changing Properties.", "Change Properties")
+	gui.F_UserFieldDash..Visible(false)
+	f.Intrinsic.Control.For(v.Local.iCnt, 1, 60, 1)
+
+	
+		f.Intrinsic.String.Build("UserField_{0}", v.Local.iCnt, v.Local.sUserField)
+		'v.Local.sUserField.Set(v.DataView.ufCaptions!gssPartUFCaption(v.Local.iCnt).User_Field!FieldValTrim)
+		gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", v.Local.sUserField, "ReadOnly", v.Local.bRead)
+		gui.F_UserFieldDash.GsGridControl1.SetColumnProperty("GssPartGV", v.Local.sUserField, "AllowEdit", v.Local.bEdit)
+		
+		'v.Local.sUserField.Set(v.DataView.ufCaptions!xrfPartUFCaption(v.Local.iCnt).User_Field!FieldValTrim)
+		gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", v.Local.sUserField, "ReadOnly", v.Local.bRead)
+		gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", v.Local.sUserField, "AllowEdit", v.Local.bEdit)
+		
+		f.Intrinsic.Math.Add(v.Local.fWait, 1.66, v.Local.fWait)
+		f.Intrinsic.UI.ChangeWaitStatus("Changing Properties.", v.Local.fWait, 0, 100)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	f.Intrinsic.UI.CloseWaitDialog
+	gui.F_UserFieldDash..Show
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.changeEdit.End
+
+Program.Sub.Serialize.Start
+v.Local.sSerialize.Declare
+f.Intrinsic.Control.Try
+
+f.Intrinsic.Control.If(v.DataTable.gssPartUFDT.Exists, =, False)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.DataTable.xrefPartUFDT.Exists, =, False)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+gui.F_UserFieldDash.GsGridControl1.Serialize("GssPartGV", v.Local.sSerialize)
+f.Global.Registry.AddValue(v.Caller.User, v.Caller.CompanyCode, "GssPartGV", 5506, 1000, False, "Serialize", False, 0, -999.0, 1/1/1980, 12:00:00 AM, v.Local.sSerialize)
+
+gui.F_UserFieldDash.GsGridControl2.Serialize("XrefPartGV", v.Local.sSerialize)
+f.Global.Registry.AddValue(v.Caller.User, v.Caller.CompanyCode, "XrefPartGV", 55061, 1000, False, "Serialize", False, 0, -999.0, 1/1/1980, 12:00:00 AM, v.Local.sSerialize)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+v.Local.sSerialize.Declare
+f.Intrinsic.Control.Try
+	f.Global.Registry.ReadValue(v.Caller.User, v.Caller.CompanyCode, "GssPartGV", 5506, 0, 5, "", v.Local.sSerialize)
+	f.Intrinsic.Control.If(v.Local.sSerialize, <>, "")
+		f.ODBC.Connection!common.OpenCommonConnection
+			f.ODBC.Connection!common.Execute("delete from GS_REGISTRY where REG_ID = '5506'")
+		f.ODBC.Connection!common.Close
+	f.Intrinsic.Control.EndIf
+	
+	f.Global.Registry.ReadValue(v.Caller.User, v.Caller.CompanyCode, "GssPartGV", "5506", 1000, 6, "", v.Local.sSerialize)
+	f.Intrinsic.Control.If(v.Local.sSerialize.Trim, <>, "")
+		gui.F_UserFieldDash.GsGridControl1.Deserialize(v.Local.sSerialize)
+	f.Intrinsic.Control.EndIf
+	
+		f.Global.Registry.ReadValue(v.Caller.User, v.Caller.CompanyCode, "XrefPartGV", 55061, 0, 5, "", v.Local.sSerialize)
+	f.Intrinsic.Control.If(v.Local.sSerialize, <>, "")
+		f.ODBC.Connection!common.OpenCommonConnection
+			f.ODBC.Connection!common.Execute("delete from GS_REGISTRY where REG_ID = '5506'")
+		f.ODBC.Connection!common.Close
+	f.Intrinsic.Control.EndIf
+	
+	f.Global.Registry.ReadValue(v.Caller.User, v.Caller.CompanyCode, "XrefPartGV", "55061", 1000, 6, "", v.Local.sSerialize)
+	f.Intrinsic.Control.If(v.Local.sSerialize.Trim, <>, "")
+		gui.F_UserFieldDash.GsGridControl2.Deserialize(v.Local.sSerialize)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.getGroupSecurity.Start
+'v.Local.bEdit.Declare
+v.Local.bEdit.Declare
+v.Local.sSQL.Declare
+v.Local.iCnt.Declare
+v.Local.sTemp.Declare
+
+v.Local.sParams.Declare
+f.Intrinsic.Control.Try
+	
+	f.Intrinsic.String.Build("Select user_group from GCG_5506_Groups where CompanyCode = '{0}' and Flag_Edit = '1'", v.Caller.CompanyCode, v.Local.sSQL)
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Data.DataTable.CreateFromSQL("securityDT", "con", v.Local.sSQL)
+	f.ODBC.Connection!con.Close
+	
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.DataTable.securityDT.RowCount--, 1)
+		v.Local.sTemp.Set(v.DataTable.securityDT(v.Local.iCnt).User_Group!FieldValTrim)
+		f.Global.Security.IsInGroup(v.Caller.User, v.Local.sTemp, v.Caller.CompanyCode, v.Local.bEdit)
+		f.Intrinsic.Control.If(v.Local.bEdit)
+			v.Local.iCnt.Set(v.DataTable.securityDT.RowCount--)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+	
+	f.Intrinsic.Control.If(v.Local.bEdit)
+		gui.F_UserFieldDash.optEdit.Enabled(True)
+	'	gui.F_UserFieldDash.optEdit.Value(True)
+	f.Intrinsic.Control.Else
+		gui.F_UserFieldDash.optEdit.Enabled(False)
+	'	gui.F_UserFieldDash.optEdit.Value(False)
+	'	gui.F_UserFieldDash.optView.Value(True)
+	f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.getGroupSecurity.End
+
+Program.Sub.cmdGssPartSearch_Click.Start
+v.Local.sRet.Declare
+v.Local.sLists.Declare
+f.Intrinsic.Control.Try
+
+	f.Intrinsic.Control.If(v.Global.bGSSSearch)
+		v.Global.bGSSSearch.Set(false)
+	f.Intrinsic.Control.Else
+		v.Global.bGSSSearch.Set(true)
+	f.Intrinsic.Control.EndIf
+	
+	gui.F_UserFieldDash.GsGridControl1.SetGridviewProperty("GssPartGV", "OptionsFindAlwaysVisible", v.Global.bGSSSearch)
+
+'	f.Intrinsic.UI.SetBrowserHotTypeAhead(true)
+'	f.ODBC.Connection!con.OpenCompanyConnection
+'		f.Intrinsic.UI.browser("GSSPART", "con", "Select * from GCG_5506_GssPartUF", "Part*!*Location*!*Description*!*Product_line*!*Description_2*!*Description_3*!*Qty_OnHand*!*UserField_1*!*UserField_2*!*UserField_3*!*UserField_4*!*UserField_5*!*UserField_6*!*UserField_7*!*UserField_8*!*UserField_9*!*UserField_10*!*UserField_11*!*UserField_12*!*UserField_13*!*UserField_14*!*UserField_15*!*UserField_16*!*UserField_17*!*UserField_18*!*UserField_19*!*UserField_20*!*UserField_21*!*UserField_22*!*UserField_23*!*UserField_24*!*UserField_25*!*UserField_26*!*UserField_27*!*UserField_28*!*UserField_29*!*UserField_30*!*UserField_31*!*UserField_32*!*UserField_33*!*UserField_34*!*UserField_35*!*UserField_36*!*UserField_37*!*UserField_38*!*UserField_39*!*UserField_40*!*UserField_41*!*UserField_42*!*UserField_43*!*UserField_44*!*UserField_45*!*UserField_46*!*UserField_47*!*UserField_48*!*UserField_49*!*UserField_50*!*UserField_51*!*UserField_52*!*UserField_53*!*UserField_54*!*UserField_55*!*UserField_56*!*UserField_57*!*UserField_58*!*UserField_59*!*UserField_60", "80*!*60*!*120*!*60*!*120*!*120*!*80*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100", v.Local.sRet)
+'	f.ODBC.Connection!con.Close
+'	
+'	f.Intrinsic.Control.If(v.Local.sRet, <>, "***CANCEL***")
+'		f.Intrinsic.String.Split(v.Local.sRet, "*!*", v.Local.sLists)
+'		gui.F_UserFieldDash.txtGssPart.Text(v.Local.sLists(0))
+'		gui.F_UserFieldDash.txtGssPL.Text(v.Local.sLists(2))
+'		f.Intrinsic.Control.CallSub(cmdGssPartFilter_Click)
+'	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdGssPartSearch_Click.End
+
+Program.Sub.cmdXrefPartSearch_Click.Start
+v.Local.sRet.Declare
+v.Local.sLists.Declare
+f.Intrinsic.Control.Try
+	
+	f.Intrinsic.Control.If(v.Global.bXrefSearch)
+		v.Global.bXrefSearch.Set(false)
+	f.Intrinsic.Control.Else
+		v.Global.bXrefSearch.Set(true)
+	f.Intrinsic.Control.EndIf
+	
+	gui.F_UserFieldDash.GsGridControl2.SetGridviewProperty("XrefPartGV", "OptionsFindAlwaysVisible", v.Global.bXrefSearch)
+''	f.Intrinsic.UI.SetBrowserHotTypeAhead(true)
+''	f.ODBC.Connection!con.OpenCompanyConnection
+''		f.Intrinsic.UI.browser("GSSPART", "con", "Select * from GCG_5506_XrefPartUF", "Part*!*Location*!*Description*!*Customer*!*Customer_Part*!*Product_Line*!*Vendor*!*Qty_OnHand*!*UserField_1*!*UserField_2*!*UserField_3*!*UserField_4*!*UserField_5*!*UserField_6*!*UserField_7*!*UserField_8*!*UserField_9*!*UserField_10*!*UserField_11*!*UserField_12*!*UserField_13*!*UserField_14*!*UserField_15*!*UserField_16*!*UserField_17*!*UserField_18*!*UserField_19*!*UserField_20*!*UserField_21*!*UserField_22*!*UserField_23*!*UserField_24*!*UserField_25*!*UserField_26*!*UserField_27*!*UserField_28*!*UserField_29*!*UserField_30*!*UserField_31*!*UserField_32*!*UserField_33*!*UserField_34*!*UserField_35*!*UserField_36*!*UserField_37*!*UserField_38*!*UserField_39*!*UserField_40*!*UserField_41*!*UserField_42*!*UserField_43*!*UserField_44*!*UserField_45*!*UserField_46*!*UserField_47*!*UserField_48*!*UserField_49*!*UserField_50*!*UserField_51*!*UserField_52*!*UserField_53*!*UserField_54*!*UserField_55*!*UserField_56*!*UserField_57*!*UserField_58*!*UserField_59*!*UserField_60", "80*!*60*!*120*!*120*!*80*!*60*!*80*!*80*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100*!*100", v.Local.sRet)
+''	f.ODBC.Connection!con.Close
+''	
+''	f.Intrinsic.Control.If(v.Local.sRet, <>, "***CANCEL***")
+''		f.Intrinsic.String.Split(v.Local.sRet, "*!*", v.Local.sLists)
+''		gui.F_UserFieldDash.txtXrefPart.Text(v.Local.sLists(0))
+''		gui.F_UserFieldDash.txtXrefCustomer.Text(v.Local.sLists(2))
+''		gui.F_UserFieldDash.txtXrefCustomerPart.Text(v.Local.sLists(3))
+''		gui.F_UserFieldDash.txtXrefPL.Text(v.Local.sLists(4))
+''		f.Intrinsic.Control.CallSub(cmdXrefFilter_Click)
+''	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdXrefPartSearch_Click.End
+
+Program.Sub.cmdXRefPartClear2_Click.Start
+f.Intrinsic.Control.Try
+	f.Data.DataView.SetFilter("gssPartUfDT", "gssPartUfDV", "")
+	f.Data.DataView.SetFilter("xrefPartUFDT", "xrefPartUFDV", "")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdXRefPartClear2_Click.End
+
+Program.Sub.cmdGSSPartClear_Click.Start
+f.Intrinsic.Control.Try
+	f.Data.DataView.SetFilter("gssPartUfDT", "gssPartUfDV", "")
+	f.Data.DataView.SetFilter("xrefPartUFDT", "xrefPartUFDV", "")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdGSSPartClear_Click.End
+
+Program.Sub.LoadDDLs.Start
+f.Intrinsic.Control.Try
+	V.Local.Values.Declare(String, "")
+	V.Local.Row.Declare(Long, 0)
+	
+	F.ODBC.Connection!conx.OpenCompanyConnection
+	
+	'WE are going to load the ddl table info and populate the fields
+	F.Data.DataTable.CreateFromSQL("dtDDLs", "conx", "Select VALUE_TYPE, RTRIM(LTRIM(DDL_VALUE)) as DDL_VALUE, VALUE_ORDER from GCG_5955_DDL_VALS")
+	
+	F.ODBC.Connection!conx.Close
+	
+	'The assumption here is that Userfield 2-8 are being used as the types that are needed;
+	F.Data.DataView.Create("dtDDLs", "dvRolls", 22, "[VALUE_TYPE] = 'R'", "VALUE_ORDER ASC")
+	F.Data.DataView.ToString("dtDDLs", "dvRolls", "DDL_VALUE", "", "*!*", V.Local.Values)
+	F.Intrinsic.String.Build("*!*{0}", V.Local.Values, V.Local.Values)
+	
+	Gui.F_UserFieldDash.GsGridControl2.ColumnEdit("XrefPartGV", "USERFIELD_2", "Dropdownlist", V.Local.Values)
+	
+	F.Data.DataView.Close("dtDDLs", "dvRolls")
+	
+	'The assumption here is that Userfield 2-8 are being used as the types that are needed;
+	F.Data.DataView.Create("dtDDLs", "dvSheets", 22, "[VALUE_TYPE] = 'S'", "VALUE_ORDER ASC")
+	F.Data.DataView.ToString("dtDDLs", "dvSheets", "DDL_VALUE", "", "*!*", V.Local.Values)
+	F.Intrinsic.String.Build("*!*{0}", V.Local.Values, V.Local.Values)
+	
+	Gui.F_UserFieldDash.GsGridControl2.ColumnEdit("XrefPartGV", "USERFIELD_3", "Dropdownlist", V.Local.Values)
+	
+	F.Data.DataView.Close("dtDDLs", "dvSheets")
+	
+	'The assumption here is that Userfield 2-8 are being used as the types that are needed;
+	F.Data.DataView.Create("dtDDLs", "dvStack", 22, "[VALUE_TYPE] = 'T'", "VALUE_ORDER ASC")
+	F.Data.DataView.ToString("dtDDLs", "dvStack", "DDL_VALUE", "", "*!*", V.Local.Values)
+	F.Intrinsic.String.Build("*!*{0}", V.Local.Values, V.Local.Values)
+	
+	Gui.F_UserFieldDash.GsGridControl2.ColumnEdit("XrefPartGV", "USERFIELD_4", "Dropdownlist", V.Local.Values)
+	
+	F.Data.DataView.Close("dtDDLs", "dvStack")
+	
+	'The assumption here is that Userfield 2-8 are being used as the types that are needed;
+	F.Data.DataView.Create("dtDDLs", "dvDrive", 22, "[VALUE_TYPE] = 'D'", "VALUE_ORDER ASC")
+	F.Data.DataView.ToString("dtDDLs", "dvDrive", "DDL_VALUE", "", "*!*", V.Local.Values)
+	F.Intrinsic.String.Build("*!*{0}", V.Local.Values, V.Local.Values)
+	
+	Gui.F_UserFieldDash.GsGridControl2.ColumnEdit("XrefPartGV", "USERFIELD_5", "Dropdownlist", V.Local.Values)
+	
+	F.Data.DataView.Close("dtDDLs", "dvDrive")
+	
+	'The assumption here is that Userfield 2-8 are being used as the types that are needed;
+	F.Data.DataView.Create("dtDDLs", "dvMotor", 22, "[VALUE_TYPE] = 'M'", "VALUE_ORDER ASC")
+	F.Data.DataView.ToString("dtDDLs", "dvMotor", "DDL_VALUE", "", "*!*", V.Local.Values)
+	F.Intrinsic.String.Build("*!*{0}", V.Local.Values, V.Local.Values)
+	
+	Gui.F_UserFieldDash.GsGridControl2.ColumnEdit("XrefPartGV", "USERFIELD_6", "Dropdownlist", V.Local.Values)
+	
+	F.Data.DataView.Close("dtDDLs", "dvMotor")
+	
+	'The assumption here is that Userfield 2-8 are being used as the types that are needed;
+	F.Data.DataView.Create("dtDDLs", "dvPLC", 22, "[VALUE_TYPE] = 'P'", "VALUE_ORDER ASC")
+	F.Data.DataView.ToString("dtDDLs", "dvPLC", "DDL_VALUE", "", "*!*", V.Local.Values)
+	F.Intrinsic.String.Build("*!*{0}", V.Local.Values, V.Local.Values)
+	
+	Gui.F_UserFieldDash.GsGridControl2.ColumnEdit("XrefPartGV", "USERFIELD_7", "Dropdownlist", V.Local.Values)
+	
+	F.Data.DataView.Close("dtDDLs", "dvPLC")
+	
+	'The assumption here is that Userfield 2-8 are being used as the types that are needed;
+	F.Data.DataView.Create("dtDDLs", "dvHMI", 22, "[VALUE_TYPE] = 'H'", "VALUE_ORDER ASC")
+	F.Data.DataView.ToString("dtDDLs", "dvHMI", "DDL_VALUE", "", "*!*", V.Local.Values)
+	F.Intrinsic.String.Build("*!*{0}", V.Local.Values, V.Local.Values)
+	
+	Gui.F_UserFieldDash.GsGridControl2.ColumnEdit("XrefPartGV", "USERFIELD_8", "Dropdownlist", V.Local.Values)
+	
+	F.Data.DataView.Close("dtDDLs", "dvHMI")
+	
+	F.Data.DataTable.Close("dtDDLs")
+	
+	F.Intrinsic.Control.For(V.Local.Row, 9, 60, 1)
+		F.Intrinsic.String.Build("USERFIELD_{0}", V.Local.Row, V.Local.Values)
+		Gui.F_UserFieldDash.GsGridControl2.SetColumnProperty("XrefPartGV", V.Local.Values, "Visible", False)
+	F.Intrinsic.Control.Next(V.Local.Row)
+	
+	Gui.F_UserFieldDash.GsGridControl2.SetGridViewProperty("XrefPartGV", "OptionsFindAlwaysVisible", True)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.LoadDDLs.End
+
+Program.Sub.ctxExport.Start
+F.Intrinsic.Control.Try
+V.Local.bExcel.Declare(Boolean, False)
+V.Local.bFileLocked.Declare(Boolean, False)
+V.Local.sFileExport.Declare(String, "")
+V.Local.sMsg.Declare(String, "")
+
+F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+F.Intrinsic.Control.If(V.Local.bExcel)
+	
+	F.Intrinsic.String.Build("{0}\GCG_5955_Export.xlsx", V.Caller.LocalGssTempDir, V.Local.sFileExport)
+	F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+	F.Intrinsic.Control.If(V.Local.bFileLocked)
+		F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}", V.Ambient.NewLine, V.Local.sFileExport, V.Local.sMsg)
+		F.Intrinsic.UI.Msgbox(V.Local.sMsg, "File In Use")
+	F.Intrinsic.Control.Else
+		Gui.F_UserFieldDash.GsGridControl2.Export(V.Local.sFileExport, "xlsx")
+		F.Intrinsic.Task.ShellExec(0, "", V.Local.sFileExport, "", "", 1)
+	F.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("Excel Presence not detected. Please make sure you have Excel installed on this machine", "EXPORT ERROR")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.ctxExport.End
