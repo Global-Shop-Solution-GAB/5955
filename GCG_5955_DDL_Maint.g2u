@@ -1,0 +1,517 @@
+Program.Sub.ScreenSU.Start
+Gui.F_DDL_Maint..Create
+Gui.F_DDL_Maint..Caption("Maintenance for Inventory Dashboard columns")
+Gui.F_DDL_Maint..Size(11985,9945)
+Gui.F_DDL_Maint..MinX(0)
+Gui.F_DDL_Maint..MinY(0)
+Gui.F_DDL_Maint..Position(0,0)
+Gui.F_DDL_Maint..BackColor(-2147483633)
+Gui.F_DDL_Maint..MousePointer(0)
+Gui.F_DDL_Maint..Event(UnLoad,F_DDL_Maint_UnLoad)
+Gui.F_DDL_Maint..Sizeable(False)
+Gui.F_DDL_Maint..MaxButton(False)
+Gui.F_DDL_Maint.lbl1.Create(Label,"Rollstand Model",True,1935,255,0,240,270,True,0,"Arial",8,-2147483633,0)
+Gui.F_DDL_Maint.gsgcRollStand.Create(GsGridControl)
+Gui.F_DDL_Maint.gsgcRollStand.Size(2565,3795)
+Gui.F_DDL_Maint.gsgcRollStand.Position(240,495)
+Gui.F_DDL_Maint.gsgcSheeter.Create(GsGridControl)
+Gui.F_DDL_Maint.gsgcSheeter.Size(2565,3795)
+Gui.F_DDL_Maint.gsgcSheeter.Position(3165,495)
+Gui.F_DDL_Maint.lbl2.Create(Label,"Sheeter Model",True,1935,255,0,3165,270,True,0,"Arial",8,-2147483633,0)
+Gui.F_DDL_Maint.gsgcStacker.Create(GsGridControl)
+Gui.F_DDL_Maint.gsgcStacker.Size(2565,3795)
+Gui.F_DDL_Maint.gsgcStacker.Position(6090,495)
+Gui.F_DDL_Maint.lbl3.Create(Label,"Stacker Model",True,1935,255,0,6090,270,True,0,"Arial",8,-2147483633,0)
+Gui.F_DDL_Maint.gsgcHMIType.Create(GsGridControl)
+Gui.F_DDL_Maint.gsgcHMIType.Size(2565,3795)
+Gui.F_DDL_Maint.gsgcHMIType.Position(9015,4965)
+Gui.F_DDL_Maint.lbl4.Create(Label,"HMI Type",True,1935,255,0,9015,4740,True,0,"Arial",8,-2147483633,0)
+Gui.F_DDL_Maint.gsgcDriveType.Create(GsGridControl)
+Gui.F_DDL_Maint.gsgcDriveType.Size(2565,3795)
+Gui.F_DDL_Maint.gsgcDriveType.Position(240,4965)
+Gui.F_DDL_Maint.lbl5.Create(Label,"Drive Type",True,1935,255,0,240,4740,True,0,"Arial",8,-2147483633,0)
+Gui.F_DDL_Maint.gsgcMotorHP.Create(GsGridControl)
+Gui.F_DDL_Maint.gsgcMotorHP.Size(2565,3795)
+Gui.F_DDL_Maint.gsgcMotorHP.Position(3165,4965)
+Gui.F_DDL_Maint.lbl6.Create(Label,"Motor HP",True,1935,255,0,3165,4740,True,0,"Arial",8,-2147483633,0)
+Gui.F_DDL_Maint.gsgcPLCType.Create(GsGridControl)
+Gui.F_DDL_Maint.gsgcPLCType.Size(2565,3795)
+Gui.F_DDL_Maint.gsgcPLCType.Position(6090,4965)
+Gui.F_DDL_Maint.lbl7.Create(Label,"PLC Type",True,1935,255,0,6090,4740,True,0,"Arial",8,-2147483633,0)
+Gui.F_DDL_Maint.cmdSave.Create(Button)
+Gui.F_DDL_Maint.cmdSave.Size(1155,375)
+Gui.F_DDL_Maint.cmdSave.Position(255,8970)
+Gui.F_DDL_Maint.cmdSave.Caption("SAVE")
+Gui.F_DDL_Maint.cmdSave.Event(Click,SaveDDLs)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Coder: FEQ
+'Date: 4/15/2020
+'Customer: Maxson
+'This script is part of the Inventory XRef User Fields dashboard created for Maxson.
+'This will be run from a custom menu item. We will have grids populated for every drop down list they need. This is for 7 different columns on the dashboard.
+
+F.Intrinsic.Control.Try
+
+'We begin by grabbing and populating the data saved into the database
+F.Intrinsic.Control.CallSub(PopulateScreen)
+
+Gui.F_DDL_Maint..Show
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.F_DDL_Maint_UnLoad.Start
+F.Intrinsic.Control.End
+Program.Sub.F_DDL_Maint_UnLoad.End
+
+Program.Sub.ErrorMessage.Start
+V.Local.ErrorMessage.Declare(String, "")
+F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{0}Error Occurred {3} with description {4}", V.Ambient.ScriptPath, V.Ambient.NewLine, V.Args.Subroutine, V.Ambient.ErrorNumber, V.Ambient.ErrorDescription, V.Local.ErrorMessage)
+F.Intrinsic.UI.Msgbox(V.Local.ErrorMessage, "ERROR ENCOUNTERED")
+Program.Sub.ErrorMessage.End
+
+Program.Sub.PopulateScreen.Start
+F.Intrinsic.Control.Try
+
+F.ODBC.Connection!conx.OpenCompanyConnection
+
+F.Data.DataTable.CreateFromSQL("dtMainTable", "conx", "Select VALUE_TYPE, RTRIM(LTRIM(DDL_VALUE)) as DDL_VALUE, VALUE_ORDER from GCG_5955_DDL_VALS", True)
+
+F.ODBC.Connection!conx.Close
+
+'The values for the lists are:
+'R - "Rollstand Model"
+'S - "Sheeter Model"
+'T - "Stacker Model"
+'D - "Drive Type"
+'M - "Motor HP"
+'P - "PLC Type"
+'H - "HMI Type"
+
+'Populate Rollstand Model grid
+F.Intrinsic.Control.CallSub(RGrid)
+
+'Populate Sheeter Model grid
+F.Intrinsic.Control.CallSub(SGrid)
+
+'Populate Stacker Model grid
+F.Intrinsic.Control.CallSub(TGrid)
+
+'Populate Drive Type grid
+F.Intrinsic.Control.CallSub(DGrid)
+
+'Populate Motor HP grid
+F.Intrinsic.Control.CallSub(MGrid)
+
+'Populate PLC Type grid
+F.Intrinsic.Control.CallSub(PGrid)
+
+'Populate HMI Type grid
+F.Intrinsic.Control.CallSub(HGrid)
+
+'Create Context menu item and associate it to grids
+F.Intrinsic.Control.CallSub(SetContextMenu)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.PopulateScreen.End
+
+Program.Sub.RGrid.Start
+F.Intrinsic.Control.Try
+
+'The value type for Rollstand MOdel is R
+F.Data.DataView.Create("dtMainTable", "dvRollstand", 22, "[VALUE_TYPE] = 'R'", "VALUE_ORDER ASC")
+
+Gui.F_DDL_Maint.gsgcRollStand.AddGridviewFromDataview("gvRoll", "dtMainTable", "dvRollstand")
+Gui.F_DDL_Maint.gsgcRollStand.MainView("gvRoll")
+
+Gui.F_DDL_Maint.gsgcRollStand.SetGridviewProperty("gvRoll", "AllowSort", False)
+
+Gui.F_DDL_Maint.gsgcRollStand.SetColumnProperty("gvRoll", "VALUE_TYPE", "Visible", False)
+Gui.F_DDL_Maint.gsgcRollStand.SetColumnProperty("gvRoll", "VALUE_ORDER", "Visible", False)
+
+Gui.F_DDL_Maint.gsgcRollStand.SetColumnProperty("gvRoll", "DDL_VALUE", "ReadOnly", False)
+
+Gui.F_DDL_Maint.gsgcRollStand.SetColumnProperty("gvRoll", "DDL_VALUE", "AllowEdit", True)
+
+Gui.F_DDL_Maint.gsgcRollStand.SetColumnProperty("gvRoll", "DDL_VALUE", "Caption", "Rollstand Model")
+
+Gui.F_DDL_Maint.gsgcRollStand.SetColumnProperty("gvRoll", "DDL_VALUE", "HeaderHAlignment", "Left")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.RGrid.End
+
+Program.Sub.SGrid.Start
+F.Intrinsic.Control.Try
+
+'The Value Type for Sheeter Mode is S
+F.Data.DataView.Create("dtMainTable", "dvSheet", 22, "[VALUE_TYPE] = 'S'", "VALUE_ORDER ASC")
+
+Gui.F_DDL_Maint.gsgcSheeter.AddGridviewFromDataview("gvSheet", "dtMainTable", "dvSheet")
+Gui.F_DDL_Maint.gsgcSheeter.MainView("gvSheet")
+
+Gui.F_DDL_Maint.gsgcSheeter.SetGridviewProperty("gvSheet", "AllowSort", False)
+
+Gui.F_DDL_Maint.gsgcSheeter.SetColumnProperty("gvSheet", "VALUE_TYPE", "Visible", False)
+Gui.F_DDL_Maint.gsgcSheeter.SetColumnProperty("gvSheet", "VALUE_ORDER", "Visible", False)
+
+Gui.F_DDL_Maint.gsgcSheeter.SetColumnProperty("gvSheet", "DDL_VALUE", "ReadOnly", False)
+
+Gui.F_DDL_Maint.gsgcSheeter.SetColumnProperty("gvSheet", "DDL_VALUE", "AllowEdit", True)
+
+Gui.F_DDL_Maint.gsgcSheeter.SetColumnProperty("gvSheet", "DDL_VALUE", "Caption", "Sheeter Model")
+
+Gui.F_DDL_Maint.gsgcSheeter.SetColumnProperty("gvSheet", "DDL_VALUE", "HeaderHAlignment", "Left")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.SGrid.End
+
+Program.Sub.TGrid.Start
+F.Intrinsic.Control.Try
+
+'The Value Type for Stacker Model is T
+F.Data.DataView.Create("dtMainTable", "dvStacker", 22, "[VALUE_TYPE] = 'T'", "VALUE_ORDER ASC")
+
+Gui.F_DDL_Maint.gsgcStacker.AddGridviewFromDataview("gvStacker", "dtMainTable", "dvStacker")
+Gui.F_DDL_Maint.gsgcStacker.MainView("gvStacker")
+
+Gui.F_DDL_Maint.gsgcStacker.SetGridviewProperty("gvStacker", "AllowSort", False)
+
+Gui.F_DDL_Maint.gsgcStacker.SetColumnProperty("gvStacker", "VALUE_TYPE", "Visible", False)
+Gui.F_DDL_Maint.gsgcStacker.SetColumnProperty("gvStacker", "VALUE_ORDER", "Visible", False)
+
+Gui.F_DDL_Maint.gsgcStacker.SetColumnProperty("gvStacker", "DDL_VALUE", "ReadOnly", False)
+
+Gui.F_DDL_Maint.gsgcStacker.SetColumnProperty("gvStacker", "DDL_VALUE", "AllowEdit", True)
+
+Gui.F_DDL_Maint.gsgcStacker.SetColumnProperty("gvStacker", "DDL_VALUE", "Caption", "Stacker Model")
+
+Gui.F_DDL_Maint.gsgcStacker.SetColumnProperty("gvStacker", "DDL_VALUE", "HeaderHAlignment", "Left")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.TGrid.End
+
+Program.Sub.DGrid.Start
+F.Intrinsic.Control.Try
+
+'The Value Type for Drive is D
+F.Data.DataView.Create("dtMainTable", "dvDrive", 22, "[VALUE_TYPE] = 'D'", "VALUE_ORDER ASC")
+
+Gui.F_DDL_Maint.gsgcDriveType.AddGridviewFromDataview("gvDrive", "dtMainTable", "dvDrive")
+Gui.F_DDL_Maint.gsgcDriveType.MainView("gvDrive")
+
+Gui.F_DDL_Maint.gsgcDriveType.SetGridviewProperty("gvDrive", "AllowSort", False)
+
+Gui.F_DDL_Maint.gsgcDriveType.SetColumnProperty("gvDrive", "VALUE_TYPE", "Visible", False)
+Gui.F_DDL_Maint.gsgcDriveType.SetColumnProperty("gvDrive", "VALUE_ORDER", "Visible", False)
+
+Gui.F_DDL_Maint.gsgcDriveType.SetColumnProperty("gvDrive", "DDL_VALUE", "ReadOnly", False)
+
+Gui.F_DDL_Maint.gsgcDriveType.SetColumnProperty("gvDrive", "DDL_VALUE", "AllowEdit", True)
+
+Gui.F_DDL_Maint.gsgcDriveType.SetColumnProperty("gvDrive", "DDL_VALUE", "Caption", "Drive Type")
+
+Gui.F_DDL_Maint.gsgcDriveType.SetColumnProperty("gvDrive", "DDL_VALUE", "HeaderHAlignment", "Left")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.DGrid.End
+
+Program.Sub.MGrid.Start
+F.Intrinsic.Control.Try
+
+'The Value Type for Motor is M
+F.Data.DataView.Create("dtMainTable", "dvMotor", 22, "[VALUE_TYPE] = 'M'", "VALUE_ORDER ASC")
+
+Gui.F_DDL_Maint.gsgcMotorHP.AddGridviewFromDataview("gvMotor", "dtMainTable", "dvMotor")
+Gui.F_DDL_Maint.gsgcMotorHP.MainView("gvMotor")
+
+Gui.F_DDL_Maint.gsgcMotorHP.SetGridviewProperty("gvMotor", "AllowSort", False)
+
+Gui.F_DDL_Maint.gsgcMotorHP.SetColumnProperty("gvMotor", "VALUE_TYPE", "Visible", False)
+Gui.F_DDL_Maint.gsgcMotorHP.SetColumnProperty("gvMotor", "VALUE_ORDER", "Visible", False)
+
+Gui.F_DDL_Maint.gsgcMotorHP.SetColumnProperty("gvMotor", "DDL_VALUE", "ReadOnly", False)
+
+Gui.F_DDL_Maint.gsgcMotorHP.SetColumnProperty("gvMotor", "DDL_VALUE", "AllowEdit", True)
+
+Gui.F_DDL_Maint.gsgcMotorHP.SetColumnProperty("gvMotor", "DDL_VALUE", "Caption", "Motor HP")
+
+Gui.F_DDL_Maint.gsgcMotorHP.SetColumnProperty("gvMotor", "DDL_VALUE", "HeaderHAlignment", "Left")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.MGrid.End
+
+Program.Sub.PGrid.Start
+F.Intrinsic.Control.Try
+
+'The Value Type for PLC Type is P
+F.Data.DataView.Create("dtMainTable", "dvPLC", 22, "[VALUE_TYPE] = 'P'", "VALUE_ORDER ASC")
+
+Gui.F_DDL_Maint.gsgcPLCType.AddGridviewFromDataview("gvPLC", "dtMainTable", "dvPLC")
+Gui.F_DDL_Maint.gsgcPLCType.MainView("gvPLC")
+
+Gui.F_DDL_Maint.gsgcPLCType.SetGridviewProperty("gvPLC", "AllowSort", False)
+
+Gui.F_DDL_Maint.gsgcPLCType.SetColumnProperty("gvPLC", "VALUE_TYPE", "Visible", False)
+Gui.F_DDL_Maint.gsgcPLCType.SetColumnProperty("gvPLC", "VALUE_ORDER", "Visible", False)
+
+Gui.F_DDL_Maint.gsgcPLCType.SetColumnProperty("gvPLC", "DDL_VALUE", "ReadOnly", False)
+
+Gui.F_DDL_Maint.gsgcPLCType.SetColumnProperty("gvPLC", "DDL_VALUE", "AllowEdit", True)
+
+Gui.F_DDL_Maint.gsgcPLCType.SetColumnProperty("gvPLC", "DDL_VALUE", "Caption", "PLC Type")
+
+Gui.F_DDL_Maint.gsgcPLCType.SetColumnProperty("gvPLC", "DDL_VALUE", "HeaderHAlignment", "Left")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.PGrid.End
+
+Program.Sub.HGrid.Start
+F.Intrinsic.Control.Try
+
+'The Value Type for HMI Type is H
+F.Data.DataView.Create("dtMainTable", "dvHMI", 22, "[VALUE_TYPE] = 'H'", "VALUE_ORDER ASC")
+
+Gui.F_DDL_Maint.gsgcHMIType.AddGridviewFromDataview("gvHMI", "dtMainTable", "dvHMI")
+Gui.F_DDL_Maint.gsgcHMIType.MainView("gvHMI")
+
+Gui.F_DDL_Maint.gsgcHMIType.SetGridviewProperty("gvHMI", "AllowSort", False)
+
+Gui.F_DDL_Maint.gsgcHMIType.SetColumnProperty("gvHMI", "VALUE_TYPE", "Visible", False)
+Gui.F_DDL_Maint.gsgcHMIType.SetColumnProperty("gvHMI", "VALUE_ORDER", "Visible", False)
+
+Gui.F_DDL_Maint.gsgcHMIType.SetColumnProperty("gvHMI", "DDL_VALUE", "ReadOnly", False)
+
+Gui.F_DDL_Maint.gsgcHMIType.SetColumnProperty("gvHMI", "DDL_VALUE", "AllowEdit", True)
+
+Gui.F_DDL_Maint.gsgcHMIType.SetColumnProperty("gvHMI", "DDL_VALUE", "Caption", "HMI Type")
+
+Gui.F_DDL_Maint.gsgcHMIType.SetColumnProperty("gvHMI", "DDL_VALUE", "HeaderHAlignment", "Left")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.HGrid.End
+
+Program.Sub.SaveDDLs.Start
+F.Intrinsic.Control.Try
+
+'Lets go ahead and delete everything from the table and save it all as new entries:
+F.ODBC.Connection!conx.OpenCompanyConnection
+
+F.ODBC.Connection!conx.Execute("DELETE FROM GCG_5955_DDL_VALS")
+
+F.Data.DataTable.SaveToDB("dtMainTable", "conx", "GCG_5955_DDL_VALS", "", 128)
+
+F.ODBC.Connection!conx.Close
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.SaveDDLs.End
+
+Program.Sub.SetContextMenu.Start
+F.Intrinsic.Control.Try
+
+Gui.F_DDL_Maint..ContextMenuCreate("ctxRolls")
+
+Gui.F_DDL_Maint..ContextMenuAddItem("ctxRolls", "ADD", 0, "Add Value")
+Gui.F_DDL_Maint..ContextMenuAddItem("ctxRolls", "DELETE", 0, "Remove Selected")
+
+Gui.F_DDL_Maint..ContextMenuSetItemEventHandler("ctxRolls", "ADD", "AddItemToGrid")
+Gui.F_DDL_Maint..ContextMenuSetItemEventHandler("ctxRolls", "DELETE", "RemoveItemsFromTable")
+
+Gui.F_DDL_Maint.gsgcRollStand.ContextMenuAttach("ctxRolls")
+
+Gui.F_DDL_Maint..ContextMenuCreate("ctxSheet")
+
+Gui.F_DDL_Maint..ContextMenuAddItem("ctxSheet", "ADD", 0, "Add Value")
+Gui.F_DDL_Maint..ContextMenuAddItem("ctxSheet", "DELETE", 0, "Remove Selected")
+
+Gui.F_DDL_Maint..ContextMenuSetItemEventHandler("ctxSheet", "ADD", "AddItemToGrid")
+Gui.F_DDL_Maint..ContextMenuSetItemEventHandler("ctxSheet", "DELETE", "RemoveItemsFromTable")
+
+Gui.F_DDL_Maint.gsgcSheeter.ContextMenuAttach("ctxSheet")
+
+Gui.F_DDL_Maint..ContextMenuCreate("ctxStacker")
+
+Gui.F_DDL_Maint..ContextMenuAddItem("ctxStacker", "ADD", 0, "Add Value")
+Gui.F_DDL_Maint..ContextMenuAddItem("ctxStacker", "DELETE", 0, "Remove Selected")
+
+Gui.F_DDL_Maint..ContextMenuSetItemEventHandler("ctxStacker", "ADD", "AddItemToGrid")
+Gui.F_DDL_Maint..ContextMenuSetItemEventHandler("ctxStacker", "DELETE", "RemoveItemsFromTable")
+
+Gui.F_DDL_Maint.gsgcStacker.ContextMenuAttach("ctxStacker")
+
+Gui.F_DDL_Maint..ContextMenuCreate("ctxDrive")
+
+Gui.F_DDL_Maint..ContextMenuAddItem("ctxDrive", "ADD", 0, "Add Value")
+Gui.F_DDL_Maint..ContextMenuAddItem("ctxDrive", "DELETE", 0, "Remove Selected")
+
+Gui.F_DDL_Maint..ContextMenuSetItemEventHandler("ctxDrive", "ADD", "AddItemToGrid")
+Gui.F_DDL_Maint..ContextMenuSetItemEventHandler("ctxDrive", "DELETE", "RemoveItemsFromTable")
+
+Gui.F_DDL_Maint.gsgcDriveType.ContextMenuAttach("ctxDrive")
+
+Gui.F_DDL_Maint..ContextMenuCreate("ctxMotor")
+
+Gui.F_DDL_Maint..ContextMenuAddItem("ctxMotor", "ADD", 0, "Add Value")
+Gui.F_DDL_Maint..ContextMenuAddItem("ctxMotor", "DELETE", 0, "Remove Selected")
+
+Gui.F_DDL_Maint..ContextMenuSetItemEventHandler("ctxMotor", "ADD", "AddItemToGrid")
+Gui.F_DDL_Maint..ContextMenuSetItemEventHandler("ctxMotor", "DELETE", "RemoveItemsFromTable")
+
+Gui.F_DDL_Maint.gsgcMotorHP.ContextMenuAttach("ctxMotor")
+
+Gui.F_DDL_Maint..ContextMenuCreate("ctxPLC")
+
+Gui.F_DDL_Maint..ContextMenuAddItem("ctxPLC", "ADD", 0, "Add Value")
+Gui.F_DDL_Maint..ContextMenuAddItem("ctxPLC", "DELETE", 0, "Remove Selected")
+
+Gui.F_DDL_Maint..ContextMenuSetItemEventHandler("ctxPLC", "ADD", "AddItemToGrid")
+Gui.F_DDL_Maint..ContextMenuSetItemEventHandler("ctxPLC", "DELETE", "RemoveItemsFromTable")
+
+Gui.F_DDL_Maint.gsgcPLCType.ContextMenuAttach("ctxPLC")
+
+Gui.F_DDL_Maint..ContextMenuCreate("ctxHMI")
+
+Gui.F_DDL_Maint..ContextMenuAddItem("ctxHMI", "ADD", 0, "Add Value")
+Gui.F_DDL_Maint..ContextMenuAddItem("ctxHMI", "DELETE", 0, "Remove Selected")
+
+Gui.F_DDL_Maint..ContextMenuSetItemEventHandler("ctxHMI", "ADD", "AddItemToGrid")
+Gui.F_DDL_Maint..ContextMenuSetItemEventHandler("ctxHMI", "DELETE", "RemoveItemsFromTable")
+
+Gui.F_DDL_Maint.gsgcHMIType.ContextMenuAttach("ctxHMI")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.SetContextMenu.End
+
+Program.Sub.AddItemToGrid.Start
+F.Intrinsic.Control.Try
+V.Local.OrderNumber.Declare(String, "")
+
+F.Intrinsic.Control.SelectCase(V.Args.MENUNAME.UCase)
+	F.Intrinsic.Control.Case("CTXROLLS")
+		F.Intrinsic.Control.If(V.DataView.dtMainTable!dvRollstand.RowCount, =, 0)
+			V.Local.OrderNumber.Set(1)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Add(V.DataView.dtMainTable!dvRollstand(V.DataView.dtMainTable!dvRollstand.RowCount--).Value_Order!FieldValLong, 1, V.Local.OrderNumber)
+		F.Intrinsic.Control.EndIf
+		F.Data.DataTable.AddRow("dtMainTable", "VALUE_TYPE", "R", "VALUE_ORDER", V.Local.OrderNumber)
+		
+	F.Intrinsic.Control.Case("CTXSHEET")
+		F.Intrinsic.Control.If(V.DataView.dtMainTable!dvSheet.RowCount, =, 0)
+			V.Local.OrderNumber.Set(1)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Add(V.DataView.dtMainTable!dvSheet(V.DataView.dtMainTable!dvSheet.RowCount--).Value_Order!FieldValLong, 1, V.Local.OrderNumber)
+		F.Intrinsic.Control.EndIf
+		F.Data.DataTable.AddRow("dtMainTable", "VALUE_TYPE", "S", "VALUE_ORDER", V.Local.OrderNumber)
+		
+	F.Intrinsic.Control.Case("CTXSTACKER")
+		F.Intrinsic.Control.If(V.DataView.dtMainTable!dvStacker.RowCount, =, 0)
+			V.Local.OrderNumber.Set(1)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Add(V.DataView.dtMainTable!dvStacker(V.DataView.dtMainTable!dvStacker.RowCount--).Value_Order!FieldValLong, 1, V.Local.OrderNumber)
+		F.Intrinsic.Control.EndIf
+		F.Data.DataTable.AddRow("dtMainTable", "VALUE_TYPE", "T", "VALUE_ORDER", V.Local.OrderNumber)
+		
+	F.Intrinsic.Control.Case("CTXDRIVE")
+		F.Intrinsic.Control.If(V.DataView.dtMainTable!dvDrive.RowCount, =, 0)
+			V.Local.OrderNumber.Set(1)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Add(V.DataView.dtMainTable!dvDrive(V.DataView.dtMainTable!dvDrive.RowCount--).Value_Order!FieldValLong, 1, V.Local.OrderNumber)
+		F.Intrinsic.Control.EndIf
+		F.Data.DataTable.AddRow("dtMainTable", "VALUE_TYPE", "D", "VALUE_ORDER", V.Local.OrderNumber)
+		
+	F.Intrinsic.Control.Case("CTXMOTOR")
+		F.Intrinsic.Control.If(V.DataView.dtMainTable!dvMotor.RowCount, =, 0)
+			V.Local.OrderNumber.Set(1)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Add(V.DataView.dtMainTable!dvMotor(V.DataView.dtMainTable!dvMotor.RowCount--).Value_Order!FieldValLong, 1, V.Local.OrderNumber)
+		F.Intrinsic.Control.EndIf
+		F.Data.DataTable.AddRow("dtMainTable", "VALUE_TYPE", "M", "VALUE_ORDER", V.Local.OrderNumber)
+		
+	F.Intrinsic.Control.Case("CTXPLC")
+		F.Intrinsic.Control.If(V.DataView.dtMainTable!dvPLC.RowCount, =, 0)
+			V.Local.OrderNumber.Set(1)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Add(V.DataView.dtMainTable!dvPLC(V.DataView.dtMainTable!dvPLC.RowCount--).Value_Order!FieldValLong, 1, V.Local.OrderNumber)
+		F.Intrinsic.Control.EndIf
+		F.Data.DataTable.AddRow("dtMainTable", "VALUE_TYPE", "P", "VALUE_ORDER", V.Local.OrderNumber)
+		
+	F.Intrinsic.Control.Case("CTXHMI")
+		F.Intrinsic.Control.If(V.DataView.dtMainTable!dvHMI.RowCount, =, 0)
+			V.Local.OrderNumber.Set(1)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Add(V.DataView.dtMainTable!dvHMI(V.DataView.dtMainTable!dvHMI.RowCount--).Value_Order!FieldValLong, 1, V.Local.OrderNumber)
+		F.Intrinsic.Control.EndIf
+		F.Data.DataTable.AddRow("dtMainTable", "VALUE_TYPE", "H", "VALUE_ORDER", V.Local.OrderNumber)
+		
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.AddItemToGrid.End
+
+Program.Sub.RemoveItemsFromTable.Start
+F.Intrinsic.Control.Try
+V.Local.Return.Declare(String, "")
+V.Local.Row.Declare(Long, 0)
+
+F.Intrinsic.Control.SelectCase(V.Args.MENUNAME.UCase)
+	F.Intrinsic.Control.Case("CTXROLLS")
+		Gui.F_DDL_Maint.gsgcRollStand.GetSelectedRows("gvRoll", V.Local.Return)
+		
+	F.Intrinsic.Control.Case("CTXSHEET")
+		Gui.F_DDL_Maint.gsgcSheeter.GetSelectedRows("gvSheet", V.Local.Return)
+
+	F.Intrinsic.Control.Case("CTXSTACKER")
+		Gui.F_DDL_Maint.gsgcStacker.GetSelectedRows("gvStacker", V.Local.Return)
+		
+	F.Intrinsic.Control.Case("CTXDRIVE")
+		Gui.F_DDL_Maint.gsgcDriveType.GetSelectedRows("gvDrive", V.Local.Return)
+		
+	F.Intrinsic.Control.Case("CTXMOTOR")
+		Gui.F_DDL_Maint.gsgcMotorHP.GetSelectedRows("gvMotor", V.Local.Return)
+		
+	F.Intrinsic.Control.Case("CTXPLC")
+		Gui.F_DDL_Maint.gsgcPLCType.GetSelectedRows("gvPLC", V.Local.Return)
+		
+	F.Intrinsic.Control.Case("CTXHMI")
+		Gui.F_DDL_Maint.gsgcHMIType.GetSelectedRows("gvHMI", V.Local.Return)
+		
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.If(V.Local.Return.Trim, <>, "")
+	V.Local.Row.Set(V.Local.Return.Long)
+	F.Data.DataTable.DeleteRow("dtMainTable", V.Local.Row)
+	
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(ErrorMessage, "Subroutine", V.Ambient.CurrentSubroutine)
+F.Intrinsic.Control.EndTry
+Program.Sub.RemoveItemsFromTable.End
